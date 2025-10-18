@@ -16,11 +16,11 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding-top: 120px; /* Espace pour le header fixe */
+            padding-top: 60px; /* Espace réduit pour le header fixe */
         }
 
         .container {
@@ -33,7 +33,7 @@
         .header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 2rem 0;
+            padding: 1rem 0;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
@@ -56,22 +56,22 @@
         }
 
         .logo-icon {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
 
         .logo-text h1 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: #2d3748;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.1rem;
         }
 
         .logo-text p {
@@ -96,25 +96,51 @@
             color: #667eea;
         }
 
+        .nav-link.active {
+            color: #667eea;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #667eea;
+            border-radius: 1px;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
         /* Hero Section */
         .hero {
-            padding: 4rem 0;
+            padding: 2rem 0;
             text-align: center;
             color: white;
         }
 
         .hero h2 {
-            font-size: 3rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             opacity: 0.9;
             max-width: 600px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1rem;
         }
 
         .cta-buttons {
@@ -150,29 +176,44 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
+        .btn-info {
+            background: linear-gradient(135deg, #4299e1, #3182ce);
+            color: white;
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #ed8936, #dd6b20);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+        }
+
         /* Main Content */
         .main-content {
             background: white;
-            margin: 2rem 0;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin: 1rem 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
         /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            padding: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
             background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
         }
 
         .stat-card {
             background: white;
-            padding: 1.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
         }
@@ -183,14 +224,14 @@
         }
 
         .stat-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
             color: white;
         }
 
@@ -200,10 +241,10 @@
         .stat-icon.info { background: linear-gradient(135deg, #4299e1, #3182ce); }
 
         .stat-value {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #2d3748;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .stat-label {
@@ -214,14 +255,14 @@
 
         /* Charts Section */
         .charts-section {
-            padding: 3rem 2rem;
+            padding: 1.5rem;
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #2d3748;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             text-align: center;
             position: relative;
         }
@@ -240,16 +281,16 @@
 
         .charts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .chart-container {
             background: white;
-            padding: 1.5rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             border: 1px solid #e2e8f0;
         }
 
@@ -263,34 +304,34 @@
 
         .chart-wrapper {
             position: relative;
-            height: 300px;
+            height: 200px;
         }
 
         /* Analytics Section */
         .analytics-section {
             background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            padding: 3rem 2rem;
+            padding: 1.5rem;
         }
 
         .insights-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
         }
 
         .insight-card {
             background: white;
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             border-left: 4px solid #667eea;
         }
 
         .insight-title {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #2d3748;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -298,14 +339,15 @@
 
         .insight-content {
             color: #4a5568;
-            line-height: 1.7;
+            line-height: 1.5;
+            font-size: 0.9rem;
         }
 
         /* Footer */
         .footer {
             background: #2d3748;
             color: white;
-            padding: 2rem 0;
+            padding: 1rem 0;
             text-align: center;
         }
 
@@ -417,33 +459,22 @@
                 </div>
                 <nav>
                     <ul class="nav-links">
-                        <li><a href="#analytics">Analytics</a></li>
-                        <li><a href="#insights">Insights</a></li>
-                        <li><a href="#methodology">Méthodologie</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#analytics" class="nav-link active" data-tab="analytics">Analytics</a></li>
+                        <li><a href="#insights" class="nav-link" data-tab="insights">Insights</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Analyse Prédictive des Comportements Clients</h2>
-            <p>Découvrez les insights stratégiques qui transforment votre compréhension du marché suisse grâce à l'analyse avancée des données clients.</p>
-            <div class="cta-buttons">
-                <a href="#analytics" class="btn btn-primary">Voir l'Analyse</a>
-                <a href="Presentation_Academique_Analyse_Comportements_Clients.pdf" class="btn btn-secondary" target="_blank">Rapport Complet</a>
-            </div>
-        </div>
-    </section>
 
     <!-- Main Content -->
     <div class="container">
         <div class="main-content">
-            <!-- Stats Grid -->
-            <section class="stats-grid">
+            <!-- Analytics Tab -->
+            <div id="analytics" class="tab-content active">
+                <!-- Stats Grid -->
+                <section class="stats-grid">
                 <div class="stat-card fade-in-up">
                     <div class="stat-icon primary">
                         <i class="fas fa-users"></i>
@@ -558,96 +589,86 @@
                 </div>
             </section>
 
-            <!-- Analytics Section -->
-            <section class="analytics-section" id="insights">
-                <h2 class="section-title">Insights Stratégiques</h2>
-                
-                <div class="insights-grid">
-                    <div class="insight-card">
-                        <h3 class="insight-title">
-                            <i class="fas fa-map-marked-alt"></i>
-                            Analyse Géographique
-                        </h3>
-                        <div class="insight-content">
-                            <p><strong>Lausanne</strong> domine avec 348.10 CHF de dépenses moyennes, suivie de Geneva (341.56 CHF) et Zurich (338.17 CHF). Basel présente la plus faible performance avec 322.60 CHF.</p>
-                            <p><strong>Opportunité:</strong> Développer des stratégies spécifiques pour Basel afin d'augmenter les dépenses moyennes.</p>
-                        </div>
-                    </div>
+            </div>
+
+            <!-- Insights Tab -->
+            <div id="insights" class="tab-content">
+                <!-- Analytics Section -->
+                <section class="analytics-section" id="insights">
+                    <h2 class="section-title">Insights Stratégiques</h2>
                     
-                    <div class="insight-card">
-                        <h3 class="insight-title">
-                            <i class="fas fa-users-cog"></i>
-                            Segmentation Client
-                        </h3>
-                        <div class="insight-content">
-                            <p><strong>85.5%</strong> des clients sont dans le segment Moyen (200-500 CHF), représentant le cœur de votre base clientèle.</p>
-                            <p><strong>Stratégie:</strong> Focus sur l'upselling vers le segment Élevé (500-1000 CHF) qui ne représente que 6.1% actuellement.</p>
+                    <div class="insights-grid">
+                        <div class="insight-card">
+                            <h3 class="insight-title">
+                                <i class="fas fa-map-marked-alt"></i>
+                                Analyse Géographique
+                            </h3>
+                            <div class="insight-content">
+                                <p><strong>Lausanne</strong> domine avec 348.10 CHF de dépenses moyennes, suivie de Geneva (341.56 CHF) et Zurich (338.17 CHF). Basel présente la plus faible performance avec 322.60 CHF.</p>
+                                <p><strong>Opportunité:</strong> Développer des stratégies spécifiques pour Basel afin d'augmenter les dépenses moyennes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <h3 class="insight-title">
+                                <i class="fas fa-users-cog"></i>
+                                Segmentation Client
+                            </h3>
+                            <div class="insight-content">
+                                <p><strong>85.5%</strong> des clients sont dans le segment Moyen (200-500 CHF), représentant le cœur de votre base clientèle.</p>
+                                <p><strong>Stratégie:</strong> Focus sur l'upselling vers le segment Élevé (500-1000 CHF) qui ne représente que 6.1% actuellement.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <h3 class="insight-title">
+                                <i class="fas fa-mobile-alt"></i>
+                                Comportement Digital
+                            </h3>
+                            <div class="insight-content">
+                                <p><strong>61.8%</strong> des clients utilisent principalement mobile, confirmant l'importance d'une stratégie mobile-first.</p>
+                                <p><strong>Recommandation:</strong> Optimiser l'expérience mobile et développer des fonctionnalités spécifiques aux appareils mobiles.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <h3 class="insight-title">
+                                <i class="fas fa-chart-pie"></i>
+                                Performance des Abonnements
+                            </h3>
+                            <div class="insight-content">
+                                <p><strong>Entreprise</strong> génère les dépenses moyennes les plus élevées (441.21 CHF), suivi de Premium (363.15 CHF) et Basique (233.16 CHF).</p>
+                                <p><strong>Action:</strong> Promouvoir les upgrades vers Entreprise auprès des clients Premium.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <h3 class="insight-title">
+                                <i class="fas fa-search"></i>
+                                Sources d'Acquisition
+                            </h3>
+                            <div class="insight-content">
+                                <p><strong>Trafic organique</strong> (31.4%) et <strong>Social Media</strong> (26.7%) sont les principales sources d'acquisition.</p>
+                                <p><strong>Optimisation:</strong> Renforcer le SEO et développer des campagnes sociales ciblées pour maximiser l'acquisition.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <h3 class="insight-title">
+                                <i class="fas fa-exclamation-circle"></i>
+                                Alertes Critiques
+                            </h3>
+                            <div class="insight-content">
+                                <p><strong>Taux de churn élevé</strong> à 68.7% nécessite une attention immédiate.</p>
+                                <p><strong>Priorité:</strong> Mettre en place des programmes de rétention et analyser les causes de départ des clients.</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="insight-card">
-                        <h3 class="insight-title">
-                            <i class="fas fa-mobile-alt"></i>
-                            Comportement Digital
-                        </h3>
-                        <div class="insight-content">
-                            <p><strong>61.8%</strong> des clients utilisent principalement mobile, confirmant l'importance d'une stratégie mobile-first.</p>
-                            <p><strong>Recommandation:</strong> Optimiser l'expérience mobile et développer des fonctionnalités spécifiques aux appareils mobiles.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="insight-card">
-                        <h3 class="insight-title">
-                            <i class="fas fa-chart-pie"></i>
-                            Performance des Abonnements
-                        </h3>
-                        <div class="insight-content">
-                            <p><strong>Entreprise</strong> génère les dépenses moyennes les plus élevées (441.21 CHF), suivi de Premium (363.15 CHF) et Basique (233.16 CHF).</p>
-                            <p><strong>Action:</strong> Promouvoir les upgrades vers Entreprise auprès des clients Premium.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="insight-card">
-                        <h3 class="insight-title">
-                            <i class="fas fa-search"></i>
-                            Sources d'Acquisition
-                        </h3>
-                        <div class="insight-content">
-                            <p><strong>Trafic organique</strong> (31.4%) et <strong>Social Media</strong> (26.7%) sont les principales sources d'acquisition.</p>
-                            <p><strong>Optimisation:</strong> Renforcer le SEO et développer des campagnes sociales ciblées pour maximiser l'acquisition.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="insight-card">
-                        <h3 class="insight-title">
-                            <i class="fas fa-exclamation-circle"></i>
-                            Alertes Critiques
-                        </h3>
-                        <div class="insight-content">
-                            <p><strong>Taux de churn élevé</strong> à 68.7% nécessite une attention immédiate.</p>
-                            <p><strong>Priorité:</strong> Mettre en place des programmes de rétention et analyser les causes de départ des clients.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <p>&copy; 2024 Analyse des Comportements Clients Suisse. Tous droits réservés.</p>
-                </div>
-                <ul class="footer-links">
-                    <li><a href="01_data_exploration.ipynb">Notebook</a></li>
-                    <li><a href="requirements.txt">Dépendances</a></li>
-                    <li><a href="README.md">Documentation</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
 
     <script>
         // Configuration des couleurs professionnelles
@@ -931,6 +952,32 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and contents
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Show corresponding tab content
+                    const targetTab = this.getAttribute('data-tab');
+                    const targetContent = document.getElementById(targetTab);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
             });
         });
 
