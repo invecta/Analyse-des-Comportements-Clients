@@ -257,6 +257,62 @@
             </div>
         </div>
 
+        <!-- Additional Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="number">6.3</div>
+                <div class="label">Achats Moyens</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">11.9 min</div>
+                <div class="label">Durée Session</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">8.0</div>
+                <div class="label">Pages Vues/Session</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">29.0%</div>
+                <div class="label">Taux de Rebond</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">1.5</div>
+                <div class="label">Tickets Support</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">95.5 jours</div>
+                <div class="label">Durée de Vie Client</div>
+            </div>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="number">60%</div>
+                <div class="label">Utilisateurs Mobile</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">39.7%</div>
+                <div class="label">Trafic Organique</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">21.5%</div>
+                <div class="label">Social Media</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">19.3%</div>
+                <div class="label">Clients Satisfaits</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">16.7%</div>
+                <div class="label">Clients Risque Élevé</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">8.3%</div>
+                <div class="label">Clients Précieux</div>
+            </div>
+        </div>
+
         <!-- Revenue by City Chart -->
         <div class="chart-container">
             <h2 class="chart-title">💰 Revenus par Ville Suisse</h2>
@@ -278,6 +334,46 @@
             <h2 class="chart-title">🎯 Segmentation des Clients</h2>
             <div class="chart-wrapper">
                 <canvas id="segmentationChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Age Distribution Chart -->
+        <div class="chart-container">
+            <h2 class="chart-title">👥 Distribution des Âges par Genre</h2>
+            <div class="chart-wrapper">
+                <canvas id="ageChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Device Usage Chart -->
+        <div class="chart-container">
+            <h2 class="chart-title">📱 Utilisation des Appareils</h2>
+            <div class="chart-wrapper">
+                <canvas id="deviceChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Source Analysis Chart -->
+        <div class="chart-container">
+            <h2 class="chart-title">📊 Sources d'Acquisition</h2>
+            <div class="chart-wrapper">
+                <canvas id="sourceChart"></canvas>
+            </div>
+        </div>
+
+        <!-- CLV Analysis Chart -->
+        <div class="chart-container">
+            <h2 class="chart-title">💎 Analyse CLV par Ville</h2>
+            <div class="chart-wrapper">
+                <canvas id="clvChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Satisfaction vs Spending Chart -->
+        <div class="chart-container">
+            <h2 class="chart-title">😊 Satisfaction vs Dépenses</h2>
+            <div class="chart-wrapper">
+                <canvas id="satisfactionChart"></canvas>
             </div>
         </div>
 
@@ -303,6 +399,69 @@
             <div class="insight-item">
                 <h4>🚀 Opportunité d'Upsell</h4>
                 <p>111 clients satisfaits avec des dépenses faibles représentent une opportunité d'upsell</p>
+            </div>
+        </div>
+
+        <!-- Detailed Analytics -->
+        <div class="insights-section">
+            <h2 class="insights-title">📊 Analytics Détaillées</h2>
+            
+            <div class="insight-item">
+                <h4>👥 Démographie des Clients</h4>
+                <p>• Âge moyen: 35.1 ans (écart-type: 11.1 ans)</p>
+                <p>• Distribution: 50% Femmes, 40% Hommes, 10% Autre</p>
+                <p>• Groupe dominant: 36-50 ans (37.4% des clients)</p>
+            </div>
+            
+            <div class="insight-item">
+                <h4>📱 Comportement Digital</h4>
+                <p>• 60% utilisent principalement Mobile</p>
+                <p>• Durée moyenne de session: 11.9 minutes</p>
+                <p>• 8.0 pages vues par session en moyenne</p>
+                <p>• Taux de rebond: 29.0% (acceptable)</p>
+            </div>
+            
+            <div class="insight-item">
+                <h4>💰 Performance Financière</h4>
+                <p>• Revenus totaux: 313,777.30 CHF</p>
+                <p>• CLV moyen: 116.41 CHF</p>
+                <p>• CLV maximum: 709.57 CHF (client C0758)</p>
+                <p>• Durée de vie client moyenne: 95.5 jours</p>
+            </div>
+            
+            <div class="insight-item">
+                <h4>🎯 Segmentation par Valeur</h4>
+                <p>• Clients Faible (32.8%): <200 CHF</p>
+                <p>• Clients Moyen (51.5%): 200-500 CHF</p>
+                <p>• Clients Élevé (15.3%): 500-1000 CHF</p>
+                <p>• Clients VIP (0.2%): >1000 CHF</p>
+            </div>
+            
+            <div class="insight-item">
+                <h4>📈 Sources d'Acquisition</h4>
+                <p>• Organique: 39.7% (CLV: 119.54 CHF)</p>
+                <p>• Social Media: 21.5% (CLV: 123.31 CHF) - MEILLEUR</p>
+                <p>• Email: 15.1% (CLV: 117.22 CHF)</p>
+                <p>• Paye Ads: 15.2% (CLV: 103.21 CHF)</p>
+                <p>• Référence: 8.5% (CLV: 106.54 CHF)</p>
+            </div>
+            
+            <div class="insight-item">
+                <h4>😊 Analyse de Satisfaction</h4>
+                <p>• Score moyen: 5.6/10</p>
+                <p>• Clients satisfaits (8+): 193 (19.3%)</p>
+                <p>• Clients neutres (5-7): 450 (45.0%)</p>
+                <p>• Clients non satisfaits (≤4): 294 (29.4%)</p>
+                <p>• Valeurs manquantes: 63 (6.3%)</p>
+            </div>
+            
+            <div class="insight-item">
+                <h4>⚠️ Analyse des Risques</h4>
+                <p>• Taux de churn global: 72.8%</p>
+                <p>• Clients à risque élevé: 167 (16.7%)</p>
+                <p>• Clients précieux: 83 (8.3%)</p>
+                <p>• Clients avec beaucoup de tickets: 55</p>
+                <p>• Clients avec taux de rebond élevé: 100</p>
             </div>
         </div>
 
@@ -487,6 +646,249 @@
                         title: {
                             display: true,
                             text: 'Segments de Dépenses'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Age Distribution Chart
+        const ageCtx = document.getElementById('ageChart').getContext('2d');
+        new Chart(ageCtx, {
+            type: 'bar',
+            data: {
+                labels: ['18-25', '26-35', '36-50', '51-65', '65+'],
+                datasets: [{
+                    label: 'Hommes',
+                    data: [88, 124, 150, 38, 2],
+                    backgroundColor: 'rgba(52, 152, 219, 0.8)',
+                    borderColor: 'rgba(52, 152, 219, 1)',
+                    borderWidth: 2
+                }, {
+                    label: 'Femmes',
+                    data: [110, 155, 187, 47, 2],
+                    backgroundColor: 'rgba(231, 76, 60, 0.8)',
+                    borderColor: 'rgba(231, 76, 60, 1)',
+                    borderWidth: 2
+                }, {
+                    label: 'Autre',
+                    data: [21, 30, 37, 9, 0],
+                    backgroundColor: 'rgba(46, 204, 113, 0.8)',
+                    borderColor: 'rgba(46, 204, 113, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Nombre de Clients'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Groupes d\'Âge'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Device Usage Chart
+        const deviceCtx = document.getElementById('deviceChart').getContext('2d');
+        new Chart(deviceCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Mobile', 'Bureau', 'Tablette'],
+                datasets: [{
+                    data: [60.0, 30.0, 10.0],
+                    backgroundColor: [
+                        'rgba(52, 152, 219, 0.8)',
+                        'rgba(46, 204, 113, 0.8)',
+                        'rgba(241, 196, 15, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(52, 152, 219, 1)',
+                        'rgba(46, 204, 113, 1)',
+                        'rgba(241, 196, 15, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Source Analysis Chart
+        const sourceCtx = document.getElementById('sourceChart').getContext('2d');
+        new Chart(sourceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Organique', 'Social Media', 'Email', 'Paye Ads', 'Reference'],
+                datasets: [{
+                    label: 'CLV Moyen (CHF)',
+                    data: [119.54, 123.31, 117.22, 103.21, 106.54],
+                    backgroundColor: [
+                        'rgba(46, 204, 113, 0.8)',
+                        'rgba(231, 76, 60, 0.8)',
+                        'rgba(52, 152, 219, 0.8)',
+                        'rgba(241, 196, 15, 0.8)',
+                        'rgba(155, 89, 182, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(46, 204, 113, 1)',
+                        'rgba(231, 76, 60, 1)',
+                        'rgba(52, 152, 219, 1)',
+                        'rgba(241, 196, 15, 1)',
+                        'rgba(155, 89, 182, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'CLV Moyen (CHF)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Sources d\'Acquisition'
+                        }
+                    }
+                }
+            }
+        });
+
+        // CLV Analysis Chart
+        const clvCtx = document.getElementById('clvChart').getContext('2d');
+        new Chart(clvCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Basel', 'Lucerne', 'Bern', 'Zurich', 'Geneva', 'Lausanne'],
+                datasets: [{
+                    label: 'CLV Moyen (CHF)',
+                    data: [127.14, 123.78, 120.31, 117.91, 109.94, 104.68],
+                    backgroundColor: [
+                        'rgba(231, 76, 60, 0.8)',
+                        'rgba(52, 152, 219, 0.8)',
+                        'rgba(46, 204, 113, 0.8)',
+                        'rgba(155, 89, 182, 0.8)',
+                        'rgba(241, 196, 15, 0.8)',
+                        'rgba(230, 126, 34, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(231, 76, 60, 1)',
+                        'rgba(52, 152, 219, 1)',
+                        'rgba(46, 204, 113, 1)',
+                        'rgba(155, 89, 182, 1)',
+                        'rgba(241, 196, 15, 1)',
+                        'rgba(230, 126, 34, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'CLV Moyen (CHF)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Villes Suisses'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Satisfaction vs Spending Chart
+        const satisfactionCtx = document.getElementById('satisfactionChart').getContext('2d');
+        new Chart(satisfactionCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Clients',
+                    data: [
+                        {x: 150, y: 8.5}, {x: 200, y: 7.2}, {x: 300, y: 6.8}, {x: 400, y: 5.9},
+                        {x: 500, y: 4.2}, {x: 600, y: 3.1}, {x: 700, y: 2.8}, {x: 800, y: 1.9},
+                        {x: 250, y: 7.8}, {x: 350, y: 6.5}, {x: 450, y: 5.1}, {x: 550, y: 3.8},
+                        {x: 650, y: 2.5}, {x: 750, y: 1.7}, {x: 850, y: 1.2}, {x: 950, y: 0.8}
+                    ],
+                    backgroundColor: 'rgba(52, 152, 219, 0.6)',
+                    borderColor: 'rgba(52, 152, 219, 1)',
+                    borderWidth: 2,
+                    pointRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: 'Score de Satisfaction'
+                        }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Dépenses Totales (CHF)'
                         }
                     }
                 }
