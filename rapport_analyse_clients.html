@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse des Comportements Clients - Suisse</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .cover-page {
+            text-align: center;
+            page-break-after: always;
+            padding: 4cm 0;
+        }
+        
+        .cover-title {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 1cm;
+            font-weight: bold;
+        }
+        
+        .cover-subtitle {
+            font-size: 1.5em;
+            color: #7f8c8d;
+            margin-bottom: 2cm;
+        }
+        
+        .cover-info {
+            font-size: 1.1em;
+            color: #34495e;
+            margin-bottom: 0.5cm;
+        }
+        
+        .cover-date {
+            font-size: 1em;
+            color: #95a5a6;
+            margin-top: 3cm;
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 1cm;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5cm;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin-top: 1.5cm;
+            margin-bottom: 0.8cm;
+            border-left: 4px solid #e74c3c;
+            padding-left: 0.5cm;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-top: 1cm;
+            margin-bottom: 0.5cm;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1cm;
+            margin: 1cm 0;
+        }
+        
+        .stat-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 1cm;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 0.3cm;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+        
+        .insight-box {
+            background: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding: 1cm;
+            margin: 0.8cm 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .recommendation-box {
+            background: #fdf2e9;
+            border-left: 4px solid #e67e22;
+            padding: 1cm;
+            margin: 0.8cm 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box {
+            background: #fadbd8;
+            border-left: 4px solid #e74c3c;
+            padding: 1cm;
+            margin: 0.8cm 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .success-box {
+            background: #d5f4e6;
+            border-left: 4px solid #27ae60;
+            padding: 1cm;
+            margin: 0.8cm 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1cm 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.8cm;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .chart-placeholder {
+            background: #ecf0f1;
+            border: 2px dashed #bdc3c7;
+            padding: 2cm;
+            text-align: center;
+            margin: 1cm 0;
+            border-radius: 8px;
+        }
+        
+        .chart-title {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-bottom: 0.5cm;
+        }
+        
+        ul, ol {
+            margin: 0.5cm 0;
+            padding-left: 1.5cm;
+        }
+        
+        li {
+            margin-bottom: 0.3cm;
+        }
+        
+        .highlight {
+            background-color: #f39c12;
+            color: white;
+            padding: 0.2cm 0.5cm;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        .footer {
+            position: fixed;
+            bottom: 1cm;
+            right: 2cm;
+            font-size: 0.8em;
+            color: #7f8c8d;
+        }
+        
+        .page-number {
+            position: fixed;
+            bottom: 1cm;
+            left: 2cm;
+            font-size: 0.8em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page de Couverture -->
+    <div class="cover-page">
+        <div class="cover-title">🇫🇷 Analyse des Comportements Clients</div>
+        <div class="cover-subtitle">Intelligence Commerciale pour le Marché Suisse</div>
+        
+        <div class="cover-info">Analyse complète de 1,000 clients</div>
+        <div class="cover-info">avec insights prédictifs et recommandations stratégiques</div>
+        
+        <div style="margin-top: 3cm;">
+            <div class="cover-info">📊 Données analysées: 1,000 clients suisses</div>
+            <div class="cover-info">💰 Revenus totaux: 313,777 CHF</div>
+            <div class="cover-info">🎯 CLV moyen: 116.41 CHF</div>
+            <div class="cover-info">⚠️ Taux de churn: 72.8%</div>
+        </div>
+        
+        <div class="cover-date">Généré le: 18 Octobre 2025</div>
+    </div>
+
+    <!-- Table des Matières -->
+    <div class="page-break">
+        <h1>📋 Table des Matières</h1>
+        
+        <h3>1. Résumé Exécutif</h3>
+        <h3>2. Méthodologie d'Analyse</h3>
+        <h3>3. Données et Échantillon</h3>
+        <h3>4. Métriques Clés</h3>
+        <h3>5. Analyse Géographique</h3>
+        <h3>6. Segmentation des Clients</h3>
+        <h3>7. Analyse des Abonnements</h3>
+        <h3>8. Sources d'Acquisition</h3>
+        <h3>9. Analyse de Satisfaction</h3>
+        <h3>10. Risques et Opportunités</h3>
+        <h3>11. Recommandations Stratégiques</h3>
+        <h3>12. Métriques de Succès</h3>
+        <h3>13. Conclusion</h3>
+    </div>
+
+    <!-- Résumé Exécutif -->
+    <div class="page-break">
+        <h1>📊 Résumé Exécutif</h1>
+        
+        <div class="insight-box">
+            <h3>🎯 Objectif de l'Analyse</h3>
+            <p>Cette analyse complète examine le comportement de 1,000 clients suisses pour identifier les patterns d'achat, les segments de valeur, et les opportunités d'optimisation des revenus dans le marché helvétique.</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1,000</div>
+                <div class="stat-label">Clients Analysés</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">313,777 CHF</div>
+                <div class="stat-label">Revenus Totaux</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">116.41 CHF</div>
+                <div class="stat-label">CLV Moyen</div>
+            </div>
+        </div>
+        
+        <div class="success-box">
+            <h3>🏆 Principales Découvertes</h3>
+            <ul>
+                <li><strong>Basel</strong> est la ville la plus rentable avec 333.26 CHF de dépenses moyennes</li>
+                <li><strong>Social Media</strong> est la source d'acquisition la plus rentable (CLV: 123.31 CHF)</li>
+                <li><strong>Abonnements Entreprise</strong> génèrent le CLV le plus élevé (186.29 CHF)</li>
+                <li><strong>111 clients</strong> satisfaits avec dépenses faibles représentent une opportunité d'upsell</li>
+            </ul>
+        </div>
+        
+        <div class="warning-box">
+            <h3>⚠️ Défis Identifiés</h3>
+            <ul>
+                <li><strong>Taux de churn élevé:</strong> 72.8% des clients sont à risque</li>
+                <li><strong>167 clients</strong> identifiés comme étant à risque élevé</li>
+                <li><strong>Satisfaction moyenne:</strong> 5.6/10 nécessite amélioration</li>
+                <li><strong>75 clients</strong> à haute valeur avec faible satisfaction</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Méthodologie -->
+    <div class="page-break">
+        <h1>🔬 Méthodologie d'Analyse</h1>
+        
+        <h2>📊 Approche Analytique</h2>
+        <p>Cette analyse utilise une approche data-driven combinant:</p>
+        <ul>
+            <li><strong>Analyse Exploratoire des Données (EDA):</strong> Exploration complète des patterns</li>
+            <li><strong>Segmentation Client:</strong> Classification par valeur et comportement</li>
+            <li><strong>Analyse Prédictive:</strong> Identification des risques de churn</li>
+            <li><strong>Analyse de Corrélation:</strong> Relations entre variables</li>
+            <li><strong>Analyse Temporelle:</strong> Tendances et patterns temporels</li>
+        </ul>
+        
+        <h2>🛠️ Outils et Technologies</h2>
+        <table>
+            <tr>
+                <th>Outil</th>
+                <th>Version</th>
+                <th>Utilisation</th>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>3.13</td>
+                <td>Langage principal</td>
+            </tr>
+            <tr>
+                <td>Pandas</td>
+                <td>2.3.1</td>
+                <td>Manipulation des données</td>
+            </tr>
+            <tr>
+                <td>NumPy</td>
+                <td>2.2.6</td>
+                <td>Calculs numériques</td>
+            </tr>
+            <tr>
+                <td>Matplotlib</td>
+                <td>3.10.3</td>
+                <td>Visualisations de base</td>
+            </tr>
+            <tr>
+                <td>Seaborn</td>
+                <td>0.13.2</td>
+                <td>Visualisations statistiques</td>
+            </tr>
+            <tr>
+                <td>Plotly</td>
+                <td>6.3.0</td>
+                <td>Graphiques interactifs</td>
+            </tr>
+        </table>
+        
+        <h2>📈 Processus d'Analyse</h2>
+        <ol>
+            <li><strong>Génération des Données:</strong> Création d'un dataset réaliste de 1,000 clients</li>
+            <li><strong>Validation de Qualité:</strong> Vérification des données et détection d'anomalies</li>
+            <li><strong>Analyse Exploratoire:</strong> Statistiques descriptives et visualisations</li>
+            <li><strong>Segmentation:</strong> Classification des clients par valeur et comportement</li>
+            <li><strong>Analyse Prédictive:</strong> Identification des risques et opportunités</li>
+            <li><strong>Recommandations:</strong> Stratégies d'optimisation basées sur les insights</li>
+        </ol>
+    </div>
+
+    <!-- Données et Échantillon -->
+    <div class="page-break">
+        <h1>📋 Données et Échantillon</h1>
+        
+        <h2>🎯 Caractéristiques de l'Échantillon</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1,000</div>
+                <div class="stat-label">Clients Totaux</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Villes Suisses</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">16</div>
+                <div class="stat-label">Variables Analysées</div>
+            </div>
+        </div>
+        
+        <h2>🏙️ Répartition Géographique</h2>
+        <table>
+            <tr>
+                <th>Ville</th>
+                <th>Nombre de Clients</th>
+                <th>Part de Marché</th>
+                <th>Dépenses Moyennes (CHF)</th>
+            </tr>
+            <tr>
+                <td>Zurich</td>
+                <td>245</td>
+                <td>24.5%</td>
+                <td>318.49</td>
+            </tr>
+            <tr>
+                <td>Geneva</td>
+                <td>222</td>
+                <td>22.2%</td>
+                <td>307.57</td>
+            </tr>
+            <tr>
+                <td>Bern</td>
+                <td>159</td>
+                <td>15.9%</td>
+                <td>302.40</td>
+            </tr>
+            <tr>
+                <td>Basel</td>
+                <td>133</td>
+                <td>13.3%</td>
+                <td><span class="highlight">333.26</span></td>
+            </tr>
+            <tr>
+                <td>Lausanne</td>
+                <td>144</td>
+                <td>14.4%</td>
+                <td>298.27</td>
+            </tr>
+            <tr>
+                <td>Lucerne</td>
+                <td>97</td>
+                <td>9.7%</td>
+                <td>331.03</td>
+            </tr>
+        </table>
+        
+        <h2>👥 Démographie des Clients</h2>
+        <div class="insight-box">
+            <h3>Âge et Genre</h3>
+            <ul>
+                <li><strong>Âge moyen:</strong> 35.1 ans (écart-type: 11.1 ans)</li>
+                <li><strong>Distribution par genre:</strong> 50% Femmes, 40% Hommes, 10% Autre</li>
+                <li><strong>Groupe dominant:</strong> 36-50 ans (37.4% des clients)</li>
+                <li><strong>Plage d'âge:</strong> 18-80 ans</li>
+            </ul>
+        </div>
+        
+        <h2>📱 Comportement Digital</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">60%</div>
+                <div class="stat-label">Utilisateurs Mobile</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">11.9 min</div>
+                <div class="stat-label">Durée Session Moyenne</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8.0</div>
+                <div class="stat-label">Pages Vues/Session</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Métriques Clés -->
+    <div class="page-break">
+        <h1>📊 Métriques Clés de Performance</h1>
+        
+        <h2>💰 Performance Financière</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">313,777 CHF</div>
+                <div class="stat-label">Revenus Totaux</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">313.78 CHF</div>
+                <div class="stat-label">Revenus Moyens par Client</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">116.41 CHF</div>
+                <div class="stat-label">CLV Moyen</div>
+            </div>
+        </div>
+        
+        <div class="success-box">
+            <h3>💎 Top Performers</h3>
+            <ul>
+                <li><strong>CLV Maximum:</strong> 709.57 CHF (Client C0758)</li>
+                <li><strong>Dépenses Moyennes:</strong> Basel (333.26 CHF)</li>
+                <li><strong>Source Optimale:</strong> Social Media (CLV: 123.31 CHF)</li>
+                <li><strong>Abonnement Premium:</strong> Entreprise (CLV: 186.29 CHF)</li>
+            </ul>
+        </div>
+        
+        <h2>📈 Métriques d'Engagement</h2>
+        <table>
+            <tr>
+                <th>Métrique</th>
+                <th>Valeur</th>
+                <th>Benchmark</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Durée de Vie Client</td>
+                <td>95.5 jours</td>
+                <td>> 90 jours</td>
+                <td>✅ Bon</td>
+            </tr>
+            <tr>
+                <td>Taux de Rebond</td>
+                <td>29.0%</td>
+                <td>< 40%</td>
+                <td>✅ Acceptable</td>
+            </tr>
+            <tr>
+                <td>Tickets Support</td>
+                <td>1.5/client</td>
+                <td>< 2.0</td>
+                <td>✅ Bon</td>
+            </tr>
+            <tr>
+                <td>Satisfaction Moyenne</td>
+                <td>5.6/10</td>
+                <td>> 7.0</td>
+                <td>⚠️ À Améliorer</td>
+            </tr>
+        </table>
+        
+        <h2>⚠️ Métriques de Risque</h2>
+        <div class="warning-box">
+            <h3>Indicateurs d'Alerte</h3>
+            <ul>
+                <li><strong>Taux de churn:</strong> 72.8% (CRITIQUE)</li>
+                <li><strong>Clients à risque élevé:</strong> 167 (16.7%)</li>
+                <li><strong>Clients non satisfaits:</strong> 294 (29.4%)</li>
+                <li><strong>Clients avec tickets élevés:</strong> 55</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Analyse Géographique -->
+    <div class="page-break">
+        <h1>🗺️ Analyse Géographique</h1>
+        
+        <h2>🏆 Performance par Ville</h2>
+        <div class="chart-placeholder">
+            <div class="chart-title">Graphique: Revenus par Ville Suisse</div>
+            <p>Basel: 333.26 CHF | Lucerne: 331.03 CHF | Zurich: 318.49 CHF</p>
+            <p>Geneva: 307.57 CHF | Bern: 302.40 CHF | Lausanne: 298.27 CHF</p>
+        </div>
+        
+        <div class="success-box">
+            <h3>🏆 Basel - Ville Champion</h3>
+            <ul>
+                <li><strong>Dépenses moyennes:</strong> 333.26 CHF (meilleure performance)</li>
+                <li><strong>CLV moyen:</strong> 127.14 CHF</li>
+                <li><strong>Part de marché:</strong> 13.3%</li>
+                <li><strong>Stratégie:</strong> Répliquer le modèle Basel dans d'autres villes</li>
+            </ul>
+        </div>
+        
+        <h2>📊 Analyse CLV par Ville</h2>
+        <table>
+            <tr>
+                <th>Ville</th>
+                <th>CLV Moyen (CHF)</th>
+                <th>Nombre Clients</th>
+                <th>Potentiel</th>
+            </tr>
+            <tr>
+                <td>Basel</td>
+                <td><span class="highlight">127.14</span></td>
+                <td>133</td>
+                <td>🚀 Élevé</td>
+            </tr>
+            <tr>
+                <td>Lucerne</td>
+                <td>123.78</td>
+                <td>97</td>
+                <td>📈 Bon</td>
+            </tr>
+            <tr>
+                <td>Bern</td>
+                <td>120.31</td>
+                <td>159</td>
+                <td>📈 Bon</td>
+            </tr>
+            <tr>
+                <td>Zurich</td>
+                <td>117.91</td>
+                <td>245</td>
+                <td>📊 Moyen</td>
+            </tr>
+            <tr>
+                <td>Geneva</td>
+                <td>109.94</td>
+                <td>222</td>
+                <td>📊 Moyen</td>
+            </tr>
+            <tr>
+                <td>Lausanne</td>
+                <td>104.68</td>
+                <td>144</td>
+                <td>⚠️ Faible</td>
+            </tr>
+        </table>
+        
+        <h2>🎯 Recommandations Géographiques</h2>
+        <div class="recommendation-box">
+            <h3>Stratégies par Ville</h3>
+            <ul>
+                <li><strong>Basel & Lucerne:</strong> Maintenir et optimiser les stratégies existantes</li>
+                <li><strong>Bern:</strong> Augmenter les investissements marketing</li>
+                <li><strong>Zurich & Geneva:</strong> Focus sur la rétention et l'upsell</li>
+                <li><strong>Lausanne:</strong> Stratégie de revitalisation urgente</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Segmentation des Clients -->
+    <div class="page-break">
+        <h1>🎯 Segmentation des Clients</h1>
+        
+        <h2>💰 Segmentation par Valeur</h2>
+        <div class="chart-placeholder">
+            <div class="chart-title">Graphique: Distribution des Segments de Dépenses</div>
+            <p>Faible (32.8%): 328 clients | Moyen (51.5%): 515 clients</p>
+            <p>Élevé (15.3%): 153 clients | VIP (0.2%): 2 clients</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Segment</th>
+                <th>Nombre</th>
+                <th>Pourcentage</th>
+                <th>Dépenses Moyennes</th>
+                <th>Stratégie</th>
+            </tr>
+            <tr>
+                <td>VIP</td>
+                <td>2</td>
+                <td>0.2%</td>
+                <td>> 1000 CHF</td>
+                <td>🎯 Service Premium</td>
+            </tr>
+            <tr>
+                <td>Élevé</td>
+                <td>153</td>
+                <td>15.3%</td>
+                <td>500-1000 CHF</td>
+                <td>📈 Upsell & Rétention</td>
+            </tr>
+            <tr>
+                <td>Moyen</td>
+                <td>515</td>
+                <td>51.5%</td>
+                <td>200-500 CHF</td>
+                <td>🚀 Croissance</td>
+            </tr>
+            <tr>
+                <td>Faible</td>
+                <td>328</td>
+                <td>32.8%</td>
+                <td>< 200 CHF</td>
+                <td>💡 Activation</td>
+            </tr>
+        </table>
+        
+        <h2>👥 Segmentation Démographique</h2>
+        <div class="chart-placeholder">
+            <div class="chart-title">Graphique: Distribution des Âges par Genre</div>
+            <p>36-50 ans: 37.4% | 26-35 ans: 30.9% | 18-25 ans: 21.9%</p>
+            <p>51-65 ans: 9.4% | 65+ ans: 0.4%</p>
+        </div>
+        
+        <div class="insight-box">
+            <h3>🎯 Personas Clients</h3>
+            <ul>
+                <li><strong>Professionnel Senior (36-50 ans):</strong> Haute valeur, préfère abonnements Entreprise</li>
+                <li><strong>Jeune Actif (26-35 ans):</strong> Mobile-first, sensible aux prix</li>
+                <li><strong>Étudiant/Débutant (18-25 ans):</strong> Budget limité, abonnements Basique</li>
+                <li><strong>Senior (51+ ans):</strong> Fidèle, préfère le support humain</li>
+            </ul>
+        </div>
+        
+        <h2>📱 Segmentation Comportementale</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">60%</div>
+                <div class="stat-label">Mobile-First</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">30%</div>
+                <div class="stat-label">Desktop</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10%</div>
+                <div class="stat-label">Tablette</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analyse des Abonnements -->
+    <div class="page-break">
+        <h1>💎 Analyse des Abonnements</h1>
+        
+        <h2>📊 Performance par Type d'Abonnement</h2>
+        <div class="chart-placeholder">
+            <div class="chart-title">Graphique: Distribution des Types d'Abonnement</div>
+            <p>Premium: 47.5% | Basique: 27.4% | Entreprise: 25.1%</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Part de Marché</th>
+                <th>CLV Moyen</th>
+                <th>Revenus Totaux</th>
+                <th>Performance</th>
+            </tr>
+            <tr>
+                <td>Entreprise</td>
+                <td>25.1%</td>
+                <td><span class="highlight">186.29 CHF</span></td>
+                <td>126,989 CHF</td>
+                <td>🏆 Excellent</td>
+            </tr>
+            <tr>
+                <td>Premium</td>
+                <td>47.5%</td>
+                <td>114.33 CHF</td>
+                <td>144,822 CHF</td>
+                <td>📈 Bon</td>
+            </tr>
+            <tr>
+                <td>Basique</td>
+                <td>27.4%</td>
+                <td>56.02 CHF</td>
+                <td>41,966 CHF</td>
+                <td>📊 Standard</td>
+            </tr>
+        </table>
+        
+        <div class="success-box">
+            <h3>🏆 Entreprise - Segment Premium</h3>
+            <ul>
+                <li><strong>CLV le plus élevé:</strong> 186.29 CHF</li>
+                <li><strong>Clients à haute valeur:</strong> Préfèrent les abonnements Entreprise</li>
+                <li><strong>Potentiel d'expansion:</strong> Conversion Basique → Premium → Entreprise</li>
+                <li><strong>Stratégie:</strong> Développer des fonctionnalités enterprise exclusives</li>
+            </ul>
+        </div>
+        
+        <h2>🔄 Opportunités d'Upgrade</h2>
+        <div class="recommendation-box">
+            <h3>Stratégies d'Upgrade</h3>
+            <ul>
+                <li><strong>Basique → Premium:</strong> 274 clients potentiels</li>
+                <li><strong>Premium → Entreprise:</strong> 475 clients potentiels</li>
+                <li><strong>Revenus additionnels estimés:</strong> +50,000 CHF/an</li>
+                <li><strong>Tactiques:</strong> Essais gratuits, fonctionnalités premium, support dédié</li>
+            </ul>
+        </div>
+        
+        <h2>📈 Analyse de Rétention par Abonnement</h2>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Taux de Churn</th>
+                <th>Durée Moyenne</th>
+                <th>Action Requise</th>
+            </tr>
+            <tr>
+                <td>Entreprise</td>
+                <td>75.3%</td>
+                <td>120 jours</td>
+                <td>⚠️ Support proactif</td>
+            </tr>
+            <tr>
+                <td>Premium</td>
+                <td>70.7%</td>
+                <td>95 jours</td>
+                <td>📈 Améliorer valeur</td>
+            </tr>
+            <tr>
+                <td>Basique</td>
+                <td>74.1%</td>
+                <td>85 jours</td>
+                <td>🚀 Upgrade incitations</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Sources d'Acquisition -->
+    <div class="page-break">
+        <h1>📈 Sources d'Acquisition</h1>
+        
+        <h2>🎯 Performance par Source</h2>
+        <div class="chart-placeholder">
+            <div class="chart-title">Graphique: CLV par Source d'Acquisition</div>
+            <p>Social Media: 123.31 CHF | Organique: 119.54 CHF | Email: 117.22 CHF</p>
+            <p>Référence: 106.54 CHF | Paye Ads: 103.21 CHF</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Source</th>
+                <th>Part de Marché</th>
+                <th>CLV Moyen</th>
+                <th>Nombre Clients</th>
+                <th>ROI</th>
+            </tr>
+            <tr>
+                <td>Social Media</td>
+                <td>21.5%</td>
+                <td><span class="highlight">123.31 CHF</span></td>
+                <td>215</td>
+                <td>🏆 Excellent</td>
+            </tr>
+            <tr>
+                <td>Organique</td>
+                <td>39.7%</td>
+                <td>119.54 CHF</td>
+                <td>397</td>
+                <td>📈 Très Bon</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>15.1%</td>
+                <td>117.22 CHF</td>
+                <td>151</td>
+                <td>📈 Bon</td>
+            </tr>
+            <tr>
+                <td>Référence</td>
+                <td>8.5%</td>
+                <td>106.54 CHF</td>
+                <td>85</td>
+                <td>📊 Moyen</td>
+            </tr>
+            <tr>
+                <td>Paye Ads</td>
+                <td>15.2%</td>
+                <td>103.21 CHF</td>
+                <td>152</td>
+                <td>⚠️ Faible</td>
+            </tr>
+        </table>
+        
+        <div class="success-box">
+            <h3>🏆 Social Media - Source Champion</h3>
+            <ul>
+                <li><strong>CLV le plus élevé:</strong> 123.31 CHF</li>
+                <li><strong>Efficacité:</strong> Clients plus engagés et fidèles</li>
+                <li><strong>Potentiel:</strong> Expansion des campagnes social media</li>
+                <li><strong>Stratégie:</strong> Répliquer les tactiques réussies</li>
+            </ul>
+        </div>
+        
+        <h2>💰 Analyse ROI par Source</h2>
+        <div class="insight-box">
+            <h3>Recommandations d'Investissement</h3>
+            <ul>
+                <li><strong>Augmenter:</strong> Social Media (+50% budget)</li>
+                <li><strong>Maintenir:</strong> Organique (SEO optimisé)</li>
+                <li><strong>Optimiser:</strong> Email (segmentation améliorée)</li>
+                <li><strong>Réduire:</strong> Paye Ads (ROI faible)</li>
+                <li><strong>Développer:</strong> Programme de référencement</li>
+            </ul>
+        </div>
+        
+        <h2>🎯 Stratégies d'Acquisition</h2>
+        <div class="recommendation-box">
+            <h3>Plan d'Action par Source</h3>
+            <ul>
+                <li><strong>Social Media:</strong> Contenu viral, influenceurs, communautés</li>
+                <li><strong>Organique:</strong> SEO local, contenu de qualité, backlinks</li>
+                <li><strong>Email:</strong> Segmentation avancée, automation, personnalisation</li>
+                <li><strong>Référence:</strong> Programme de parrainage, récompenses</li>
+                <li><strong>Paye Ads:</strong> Optimisation des mots-clés, audiences ciblées</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Analyse de Satisfaction -->
+    <div class="page-break">
+        <h1>😊 Analyse de Satisfaction</h1>
+        
+        <h2>📊 Distribution des Scores</h2>
+        <div class="chart-placeholder">
+            <div class="chart-title">Graphique: Distribution des Scores de Satisfaction</div>
+            <p>Score moyen: 5.6/10 | Satisfaits (8+): 19.3% | Non satisfaits (≤4): 29.4%</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">5.6/10</div>
+                <div class="stat-label">Score Moyen</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">19.3%</div>
+                <div class="stat-label">Clients Satisfaits</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">29.4%</div>
+                <div class="stat-label">Clients Non Satisfaits</div>
+            </div>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Catégorie</th>
+                <th>Score</th>
+                <th>Nombre</th>
+                <th>Pourcentage</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Satisfaits</td>
+                <td>8-10</td>
+                <td>193</td>
+                <td>19.3%</td>
+                <td>🎯 Upsell</td>
+            </tr>
+            <tr>
+                <td>Neutres</td>
+                <td>5-7</td>
+                <td>450</td>
+                <td>45.0%</td>
+                <td>📈 Améliorer</td>
+            </tr>
+            <tr>
+                <td>Non Satisfaits</td>
+                <td>1-4</td>
+                <td>294</td>
+                <td>29.4%</td>
+                <td>⚠️ Urgent</td>
+            </tr>
+            <tr>
+                <td>Non Évalués</td>
+                <td>N/A</td>
+                <td>63</td>
+                <td>6.3%</td>
+                <td>📋 Enquête</td>
+            </tr>
+        </table>
+        
+        <h2>⚠️ Analyse des Insatisfactions</h2>
+        <div class="warning-box">
+            <h3>Facteurs d'Insatisfaction</h3>
+            <ul>
+                <li><strong>75 clients</strong> à haute valeur avec faible satisfaction (risque critique)</li>
+                <li><strong>Corrélation négative:</strong> Dépenses élevées ≠ Satisfaction élevée</li>
+                <li><strong>Tickets support:</strong> 55 clients avec beaucoup de tickets</li>
+                <li><strong>Taux de rebond:</strong> 100 clients avec rebond élevé</li>
+            </ul>
+        </div>
+        
+        <h2>🚀 Opportunités d'Amélioration</h2>
+        <div class="success-box">
+            <h3>111 Clients - Opportunité d'Upsell</h3>
+            <ul>
+                <li><strong>Profil:</strong> Satisfaits (8+) mais dépenses faibles</li>
+                <li><strong>Potentiel:</strong> Upgrade vers Premium/Entreprise</li>
+                <li><strong>Revenus estimés:</strong> +25,000 CHF/an</li>
+                <li><strong>Stratégie:</strong> Offres personnalisées, essais gratuits</li>
+            </ul>
+        </div>
+        
+        <h2>📈 Plan d'Amélioration de la Satisfaction</h2>
+        <div class="recommendation-box">
+            <h3>Actions Prioritaires</h3>
+            <ul>
+                <li><strong>Immédiat:</strong> Support proactif pour 75 clients à risque</li>
+                <li><strong>Court terme:</strong> Enquêtes de satisfaction régulières</li>
+                <li><strong>Moyen terme:</strong> Amélioration de l'expérience utilisateur</li>
+                <li><strong>Long terme:</strong> Programme de fidélité et récompenses</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Risques et Opportunités -->
+    <div class="page-break">
+        <h1>⚠️ Risques et Opportunités</h1>
+        
+        <h2>🚨 Analyse des Risques</h2>
+        <div class="warning-box">
+            <h3>Risques Critiques</h3>
+            <ul>
+                <li><strong>Taux de churn:</strong> 72.8% (CRITIQUE)</li>
+                <li><strong>Clients à risque élevé:</strong> 167 (16.7%)</li>
+                <li><strong>Satisfaction faible:</strong> 294 clients (29.4%)</li>
+                <li><strong>Perte de revenus estimée:</strong> 50,000 CHF/mois</li>
+            </ul>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Type de Risque</th>
+                <th>Impact</th>
+                <th>Probabilité</th>
+                <th>Urgence</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Churn Élevé</td>
+                <td>🔴 Critique</td>
+                <td>🔴 Élevée</td>
+                <td>🔴 Immédiate</td>
+                <td>Programme rétention</td>
+            </tr>
+            <tr>
+                <td>Insatisfaction</td>
+                <td>🟡 Moyen</td>
+                <td>🟡 Moyenne</td>
+                <td>🟡 30 jours</td>
+                <td>Amélioration UX</td>
+            </tr>
+            <tr>
+                <td>Tickets Support</td>
+                <td>🟡 Moyen</td>
+                <td>🟢 Faible</td>
+                <td>🟡 60 jours</td>
+                <td>Documentation</td>
+            </tr>
+        </table>
+        
+        <h2>🚀 Opportunités Identifiées</h2>
+        <div class="success-box">
+            <h3>Opportunités de Croissance</h3>
+            <ul>
+                <li><strong>Upsell:</strong> 111 clients satisfaits avec dépenses faibles</li>
+                <li><strong>Acquisition:</strong> Social Media (CLV: 123.31 CHF)</li>
+                <li><strong>Géographique:</strong> Expansion du modèle Basel</li>
+                <li><strong>Segment:</strong> Développement fonctionnalités Entreprise</li>
+            </ul>
+        </div>
+        
+        <h2>💰 Potentiel de Revenus</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">+50,000 CHF</div>
+                <div class="stat-label">Upsell Opportunités</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">+30,000 CHF</div>
+                <div class="stat-label">Rétention Améliorée</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">+25,000 CHF</div>
+                <div class="stat-label">Nouvelle Acquisition</div>
+            </div>
+        </div>
+        
+        <h2>🎯 Matrice Risque/Opportunité</h2>
+        <div class="insight-box">
+            <h3>Stratégies par Quadrant</h3>
+            <ul>
+                <li><strong>Haute Opportunité / Faible Risque:</strong> Upsell clients satisfaits</li>
+                <li><strong>Haute Opportunité / Haut Risque:</strong> Expansion géographique</li>
+                <li><strong>Faible Opportunité / Haut Risque:</strong> Réduction churn (priorité)</li>
+                <li><strong>Faible Opportunité / Faible Risque:</strong> Optimisation continue</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Recommandations Stratégiques -->
+    <div class="page-break">
+        <h1>🎯 Recommandations Stratégiques</h1>
+        
+        <h2>🔴 Actions Urgentes (0-30 jours)</h2>
+        <div class="warning-box">
+            <h3>Programme de Rétention d'Urgence</h3>
+            <ul>
+                <li><strong>Cibler 167 clients à risque élevé</strong> avec incitations spéciales</li>
+                <li><strong>Support proactif</strong> pour 75 clients haute valeur insatisfaits</li>
+                <li><strong>Campagne de réactivation</strong> pour clients inactifs >30 jours</li>
+                <li><strong>Budget estimé:</strong> 15,000 CHF</li>
+                <li><strong>ROI attendu:</strong> 40,000 CHF (rétention)</li>
+            </ul>
+        </div>
+        
+        <h2>🟡 Actions Stratégiques (1-3 mois)</h2>
+        <div class="recommendation-box">
+            <h3>Optimisation de l'Acquisition</h3>
+            <ul>
+                <li><strong>Focus Social Media:</strong> +50% budget, contenu viral</li>
+                <li><strong>Expansion géographique:</strong> Répliquer modèle Basel</li>
+                <li><strong>Mobile-first:</strong> Développer fonctionnalités premium</li>
+                <li><strong>Budget estimé:</strong> 25,000 CHF</li>
+                <li><strong>ROI attendu:</strong> 60,000 CHF (nouveaux clients)</li>
+            </ul>
+        </div>
+        
+        <h2>🟢 Actions de Croissance (3-6 mois)</h2>
+        <div class="success-box">
+            <h3>Programme d'Upsell Ciblé</h3>
+            <ul>
+                <li><strong>111 clients satisfaits:</strong> Offres upgrade personnalisées</li>
+                <li><strong>Programme de fidélité:</strong> Récompenses et avantages</li>
+                <li><strong>Fonctionnalités Entreprise:</strong> Développement exclusif</li>
+                <li><strong>Budget estimé:</strong> 20,000 CHF</li>
+                <li><strong>ROI attendu:</strong> 50,000 CHF (upsell)</li>
+            </ul>
+        </div>
+        
+        <h2>📊 Plan d'Investissement</h2>
+        <table>
+            <tr>
+                <th>Initiative</th>
+                <th>Budget</th>
+                <th>Timeline</th>
+                <th>ROI Attendu</th>
+                <th>Priorité</th>
+            </tr>
+            <tr>
+                <td>Programme Rétention</td>
+                <td>15,000 CHF</td>
+                <td>30 jours</td>
+                <td>40,000 CHF</td>
+                <td>🔴 Critique</td>
+            </tr>
+            <tr>
+                <td>Optimisation Acquisition</td>
+                <td>25,000 CHF</td>
+                <td>3 mois</td>
+                <td>60,000 CHF</td>
+                <td>🟡 Haute</td>
+            </tr>
+            <tr>
+                <td>Programme Upsell</td>
+                <td>20,000 CHF</td>
+                <td>6 mois</td>
+                <td>50,000 CHF</td>
+                <td>🟢 Moyenne</td>
+            </tr>
+            <tr>
+                <td>Amélioration UX</td>
+                <td>10,000 CHF</td>
+                <td>6 mois</td>
+                <td>30,000 CHF</td>
+                <td>🟢 Moyenne</td>
+            </tr>
+        </table>
+        
+        <h2>🎯 Métriques de Succès</h2>
+        <div class="insight-box">
+            <h3>KPIs à Suivre</h3>
+            <ul>
+                <li><strong>Taux de churn:</strong> Réduction de 72.8% à <50%</li>
+                <li><strong>CLV moyen:</strong> Augmentation de 116.41 à >150 CHF</li>
+                <li><strong>Satisfaction:</strong> Amélioration de 5.6 à >7.0/10</li>
+                <li><strong>Revenus:</strong> +180,000 CHF/an (total investissement)</li>
+                <li><strong>ROI global:</strong> 257% sur 6 mois</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Métriques de Succès -->
+    <div class="page-break">
+        <h1>📈 Métriques de Succès</h1>
+        
+        <h2>🎯 Objectifs à 6 Mois</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">< 50%</div>
+                <div class="stat-label">Taux de Churn</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">> 150 CHF</div>
+                <div class="stat-label">CLV Moyen</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">> 7.0/10</div>
+                <div class="stat-label">Satisfaction</div>
+            </div>
+        </div>
+        
+        <h2>📊 Dashboard de Suivi</h2>
+        <table>
+            <tr>
+                <th>Métrique</th>
+                <th>Actuel</th>
+                <th>Objectif</th>
+                <th>Progression</th>
+                <th>Responsable</th>
+            </tr>
+            <tr>
+                <td>Taux de Churn</td>
+                <td>72.8%</td>
+                <td>< 50%</td>
+                <td>📊 À suivre</td>
+                <td>Équipe Rétention</td>
+            </tr>
+            <tr>
+                <td>CLV Moyen</td>
+                <td>116.41 CHF</td>
+                <td>> 150 CHF</td>
+                <td>📊 À suivre</td>
+                <td>Équipe Marketing</td>
+            </tr>
+            <tr>
+                <td>Satisfaction</td>
+                <td>5.6/10</td>
+                <td>> 7.0/10</td>
+                <td>📊 À suivre</td>
+                <td>Équipe UX</td>
+            </tr>
+            <tr>
+                <td>Tickets Support</td>
+                <td>1.5/client</td>
+                <td>< 1.0</td>
+                <td>📊 À suivre</td>
+                <td>Équipe Support</td>
+            </tr>
+            <tr>
+                <td>Revenus Moyens</td>
+                <td>313.78 CHF</td>
+                <td>> 400 CHF</td>
+                <td>📊 À suivre</td>
+                <td>Équipe Commerciale</td>
+            </tr>
+        </table>
+        
+        <h2>🔄 Processus de Suivi</h2>
+        <div class="insight-box">
+            <h3>Réunions de Suivi</h3>
+            <ul>
+                <li><strong>Hebdomadaire:</strong> Métriques critiques (churn, satisfaction)</li>
+                <li><strong>Mensuel:</strong> Performance par segment et ville</li>
+                <li><strong>Trimestriel:</strong> Révision stratégique et ajustements</li>
+                <li><strong>Annuel:</strong> Plan stratégique et objectifs</li>
+            </ul>
+        </div>
+        
+        <h2>📱 Outils de Monitoring</h2>
+        <div class="recommendation-box">
+            <h3>Technologies Recommandées</h3>
+            <ul>
+                <li><strong>Dashboard:</strong> Tableau de bord temps réel</li>
+                <li><strong>Alertes:</strong> Notifications automatiques seuils</li>
+                <li><strong>Rapports:</strong> Automatisation des rapports</li>
+                <li><strong>Analytics:</strong> Suivi comportemental avancé</li>
+            </ul>
+        </div>
+        
+        <h2>🎯 Indicateurs Avancés</h2>
+        <div class="success-box">
+            <h3>Métriques Prédictives</h3>
+            <ul>
+                <li><strong>Customer Health Score:</strong> Score composite de santé client</li>
+                <li><strong>Churn Probability:</strong> Probabilité de churn par client</li>
+                <li><strong>Upsell Likelihood:</strong> Probabilité d'upgrade</li>
+                <li><strong>Lifetime Value Prediction:</strong> CLV prédictif</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="page-break">
+        <h1>🎯 Conclusion</h1>
+        
+        <h2>📊 Résumé des Découvertes</h2>
+        <div class="insight-box">
+            <h3>Insights Clés</h3>
+            <ul>
+                <li><strong>Basel</strong> est la ville la plus performante avec 333.26 CHF de dépenses moyennes</li>
+                <li><strong>Social Media</strong> est la source d'acquisition la plus rentable (CLV: 123.31 CHF)</li>
+                <li><strong>Abonnements Entreprise</strong> génèrent le CLV le plus élevé (186.29 CHF)</li>
+                <li><strong>111 clients</strong> satisfaits avec dépenses faibles représentent une opportunité majeure</li>
+                <li><strong>Taux de churn</strong> de 72.8% nécessite une action immédiate</li>
+            </ul>
+        </div>
+        
+        <h2>🚀 Impact Business Attendu</h2>
+        <div class="success-box">
+            <h3>Bénéfices Projectés</h3>
+            <ul>
+                <li><strong>Revenus additionnels:</strong> +180,000 CHF/an</li>
+                <li><strong>Réduction churn:</strong> -22.8% (de 72.8% à 50%)</li>
+                <li><strong>Amélioration CLV:</strong> +33.59 CHF (de 116.41 à 150 CHF)</li>
+                <li><strong>Satisfaction client:</strong> +1.4 points (de 5.6 à 7.0)</li>
+                <li><strong>ROI global:</strong> 257% sur 6 mois</li>
+            </ul>
+        </div>
+        
+        <h2>🎯 Prochaines Étapes</h2>
+        <div class="recommendation-box">
+            <h3>Plan d'Action Immédiat</h3>
+            <ol>
+                <li><strong>Semaine 1:</strong> Lancement programme rétention urgente</li>
+                <li><strong>Semaine 2:</strong> Identification et contact clients à risque</li>
+                <li><strong>Mois 1:</strong> Optimisation campagnes Social Media</li>
+                <li><strong>Mois 2:</strong> Développement fonctionnalités mobile</li>
+                <li><strong>Mois 3:</strong> Programme upsell clients satisfaits</li>
+                <li><strong>Mois 6:</strong> Évaluation et ajustement stratégique</li>
+            </ol>
+        </div>
+        
+        <h2>💡 Recommandations Finales</h2>
+        <div class="warning-box">
+            <h3>Actions Critiques</h3>
+            <ul>
+                <li><strong>URGENT:</strong> Programme de rétention pour 167 clients à risque</li>
+                <li><strong>STRATÉGIQUE:</strong> Focus acquisition Social Media</li>
+                <li><strong>CROISSANCE:</strong> Upsell 111 clients satisfaits</li>
+                <li><strong>OPÉRATIONNEL:</strong> Amélioration support et UX</li>
+            </ul>
+        </div>
+        
+        <h2>📈 Vision Long Terme</h2>
+        <div class="success-box">
+            <h3>Objectifs Stratégiques</h3>
+            <ul>
+                <li><strong>Positionnement:</strong> Leader marché suisse</li>
+                <li><strong>Expansion:</strong> Réplication modèle Basel</li>
+                <li><strong>Innovation:</strong> Fonctionnalités mobile-first</li>
+                <li><strong>Excellence:</strong> Satisfaction client >8.0/10</li>
+            </ul>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3cm;">
+            <h3>🇫🇷 Analyse des Comportements Clients - Suisse</h3>
+            <p>Intelligence Commerciale pour la Croissance Durable</p>
+            <p style="color: #7f8c8d; font-size: 0.9em;">Rapport généré le 18 Octobre 2025</p>
+        </div>
+    </div>
+
+    <div class="page-number"></div>
+    <div class="footer">Analyse des Comportements Clients - Suisse</div>
+</body>
+</html>
