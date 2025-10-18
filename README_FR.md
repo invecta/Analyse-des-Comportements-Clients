@@ -45,36 +45,36 @@ Ce projet effectue une analyse approfondie des donnÃ©es de comportement des cl
 
 ## ðŸ“‹ PrÃ©requis
 
-Voir equirements.txt pour les dÃ©pendances dÃ©taillÃ©es des packages.
+Voir `requirements.txt` pour les dÃ©pendances dÃ©taillÃ©es des packages.
 
 ## ðŸš€ DÃ©marrage Rapide
 
 1. **Cloner le repository** :
-   `ash
+   ```bash
    git clone https://github.com/invecta/customer-behavior-analysis-.git
    cd customer-behavior-analysis-
-   `
+   ```
 
 2. **Installer les dÃ©pendances** :
-   `ash
+   ```bash
    pip install -r requirements.txt
-   `
+   ```
 
 3. **ExÃ©cuter l'analyse** :
-   `ash
+   ```bash
    jupyter notebook 01_data_exploration.ipynb
-   `
+   ```
 
 ## ðŸ“ Structure du Projet
 
-`
+```
 customer-behavior-analysis/
 â”œâ”€â”€ 01_data_exploration.ipynb    # Notebook principal d'analyse
 â”œâ”€â”€ README.md                     # Documentation du projet (anglais)
 â”œâ”€â”€ README_FR.md                  # Documentation du projet (franÃ§ais)
 â”œâ”€â”€ requirements.txt              # DÃ©pendances Python
 â””â”€â”€ .gitignore                   # RÃ¨gles Git ignore
-`
+```
 
 ## ðŸ” Composants de l'Analyse
 
@@ -134,9 +134,9 @@ Suivre ces indicateurs de performance clÃ©s :
 ## ðŸ¤ Contribution
 
 1. Fork le repository
-2. CrÃ©er une branche de fonctionnalitÃ© (git checkout -b feature/fonctionnalite-incroyable)
-3. Commiter vos changements (git commit -m 'Ajouter une fonctionnalitÃ© incroyable')
-4. Pousser vers la branche (git push origin feature/fonctionnalite-incroyable)
+2. CrÃ©er une branche de fonctionnalitÃ© (`git checkout -b feature/fonctionnalite-incroyable`)
+3. Commiter vos changements (`git commit -m 'Ajouter une fonctionnalitÃ© incroyable'`)
+4. Pousser vers la branche (`git push origin feature/fonctionnalite-incroyable`)
 5. Ouvrir une Pull Request
 
 ## ðŸ“„ Licence
