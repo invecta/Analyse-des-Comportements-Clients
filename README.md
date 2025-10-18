@@ -1,152 +1,225 @@
-# Analyse des Comportements Clients
+# 📊 Analyse des Comportements Clients - Suisse
 
-Un projet d'analyse exploratoire de donnees (EDA) complet axe sur la comprehension des modeles de comportement des clients, des habitudes de depenses et des metriques d'engagement pour orienter les decisions commerciales basees sur les donnees.
+<div align="center">
 
-## Apercu du Projet
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Pandas](https://img.shields.io/badge/Pandas-2.0+-green.svg)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.7+-orange.svg)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.12+-purple.svg)
+![Plotly](https://img.shields.io/badge/Plotly-5.15+-red.svg)
 
-Ce projet effectue une analyse approfondie des donnees de comportement des clients, incluant l'analyse demographique, les modeles de depenses, les metriques d'engagement et la segmentation des clients. L'analyse fournit des insights actionables pour la croissance commerciale et l'optimisation de l'experience client.
+**Intelligence Commerciale pour le Marché Suisse**
 
-## Fonctionnalites Cles
+[![Demo](https://img.shields.io/badge/Demo-Live%20Analysis-brightgreen.svg)](https://github.com/invecta/Analyse-des-Comportements-Clients)
+[![Report](https://img.shields.io/badge/Report-PDF%20Download-blue.svg)](Presentation_Academique_Analyse_Comportements_Clients.pdf)
+[![Notebook](https://img.shields.io/badge/Notebook-Jupyter-orange.svg)](01_data_exploration.ipynb)
 
-- **Exploration Complete des Donnees** : Workflow EDA complet du chargement des donnees a la generation d'insights
-- **Evaluation de la Qualite des Donnees** : Validation approfondie incluant les valeurs manquantes, les valeurs aberrantes et les verifications de coherence
-- **Segmentation des Clients** : Analyse par niveaux de depenses, groupes d'age et modeles comportementaux
-- **Visualisations Interactives** : Plusieurs types de graphiques incluant histogrammes, graphiques de dispersion et cartes de correlation
-- **Intelligence Commerciale** : Recommandations strategiques basees sur les insights des donnees
-- **Analyse Temporelle** : Analyse de la duree de vie des clients et des tendances d'inscription
+</div>
 
-## Insights Cles
+---
 
-### Demographie des Clients
-- **1 000 clients** analyses avec un age moyen de 44,9 ans
-- **Repartition par genre** : 52,5% Femmes, 38,3% Hommes, 9,2% Autres
-- **Repartition geographique** : Clients dans 6 villes suisses (Lausanne, Bale, Zurich en tete)
+## 🎯 Aperçu du Projet
 
-### Performance Financiere
-- **Chiffre d'Affaires Total** : 336 309 $
-- **Chiffre d'Affaires Moyen par Client** : 336,31 $
-- **Achats Moyens par Client** : 6,6
-- L'abonnement **Enterprise** montre le plus fort potentiel de depenses
+Ce projet effectue une **analyse approfondie des données de comportement des clients** sur le marché suisse, incluant l'analyse démographique, les modèles de dépenses, les métriques d'engagement et la segmentation des clients. L'analyse fournit des **insights actionables** pour la croissance commerciale et l'optimisation de l'expérience client.
 
-### Modeles Comportementaux
-- **Forte correlation** entre le nombre total d'achats et les depenses (0,839)
-- **Dominance mobile** : 61,8% des clients utilisent des appareils mobiles
-- **Duree moyenne de session** : 14,4 minutes
-- **Taux de rebond** : 24,6%
+### 🏆 Fonctionnalités Clés
 
-## Stack Technique
+- **📈 Exploration Complète des Données** : Workflow EDA complet du chargement des données à la génération d'insights
+- **🔍 Évaluation de la Qualité des Données** : Validation approfondie incluant les valeurs manquantes, les valeurs aberrantes et les vérifications de cohérence
+- **👥 Segmentation des Clients** : Analyse par niveaux de dépenses, groupes d'âge et modèles comportementaux
+- **📊 Visualisations Interactives** : Plusieurs types de graphiques incluant histogrammes, graphiques de dispersion et cartes de corrélation
+- **🧠 Intelligence Commerciale** : Recommandations stratégiques basées sur les insights des données
+- **⏰ Analyse Temporelle** : Analyse de la durée de vie des clients et des tendances d'inscription
 
-- **Python 3.x**
-- **Pandas** : Manipulation et analyse de donnees
-- **NumPy** : Calculs numeriques
-- **Matplotlib & Seaborn** : Visualisation de donnees
-- **Plotly** : Visualisations interactives
-- **Jupyter Notebook** : Environnement de developpement interactif
+---
 
-## Prerequis
+## 📊 Insights Clés
 
-Voir `requirements.txt` pour les dependances detaillees des packages.
+### Démographie des Clients
+- **1,000 clients** analysés sur 6 villes suisses principales
+- **Distribution équilibrée** : 52.5% Femmes, 38.3% Hommes, 9.2% Autre
+- **Âge moyen** : 44.9 ans avec une concentration dans la tranche 36-50 ans (39.9%)
 
-## Demarrage Rapide
+### Performance Financière
+- **Revenus totaux** : 336,309 CHF
+- **CLV moyen** : 336 CHF par client
+- **Meilleure ville** : Lausanne avec 348.10 CHF de dépenses moyennes
+- **Ville à optimiser** : Basel avec 322.60 CHF de dépenses moyennes
 
-1. **Cloner le repository** :
+### Segmentation Stratégique
+- **Segment Moyen** : 85.5% des clients (200-500 CHF) - Cœur de la base clientèle
+- **Segment Élevé** : 6.1% des clients (500-1000 CHF) - Opportunité d'upselling
+- **Segment VIP** : 0% des clients (>1000 CHF) - Potentiel inexploité
+
+### Comportement Digital
+- **Mobile-first** : 61.8% des clients utilisent principalement mobile
+- **Taux de rebond** : 24.6% (acceptable pour le secteur)
+- **Durée de vie client** : 92 jours en moyenne
+
+### Alertes Critiques
+- **Taux de churn élevé** : 68.7% nécessite une attention immédiate
+- **Satisfaction modérée** : 5.3/10 avec seulement 3.6% de clients très satisfaits
+
+---
+
+## 🛠️ Technologies Utilisées
+
+### Langages et Frameworks
+- **Python 3.8+** - Langage principal d'analyse
+- **Jupyter Notebook** - Environnement de développement interactif
+- **Pandas** - Manipulation et analyse des données
+- **NumPy** - Calculs numériques avancés
+
+### Visualisation et Analyse
+- **Matplotlib** - Graphiques statiques de base
+- **Seaborn** - Visualisations statistiques avancées
+- **Plotly** - Graphiques interactifs et dashboards
+- **Chart.js** - Visualisations web dynamiques
+
+### Outils de Développement
+- **Git & GitHub** - Contrôle de version et collaboration
+- **ReportLab** - Génération de rapports PDF professionnels
+- **HTML5 & CSS3** - Interface web moderne et responsive
+
+---
+
+## 🚀 Installation et Utilisation
+
+### Prérequis
+```bash
+Python 3.8 ou supérieur
+pip (gestionnaire de paquets Python)
+```
+
+### Installation
+1. **Cloner le repository**
    ```bash
-   git clone https://github.com/invecta/customer-behavior-analysis-.git
-   cd customer-behavior-analysis-
+git clone https://github.com/invecta/Analyse-des-Comportements-Clients.git
+cd Analyse-des-Comportements-Clients
    ```
 
-2. **Installer les dependances** :
+2. **Installer les dépendances**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Executer l'analyse** :
+3. **Lancer l'analyse**
    ```bash
+# Option 1: Jupyter Notebook (recommandé)
    jupyter notebook 01_data_exploration.ipynb
-   ```
 
-## Structure du Projet
-
-```
-customer-behavior-analysis/
-????????? 01_data_exploration.ipynb    # Notebook principal d'analyse
-????????? README.md                     # Documentation du projet (anglais)
-????????? README_FR.md                  # Documentation du projet (francais)
-????????? requirements.txt              # Dependances Python
-????????? .gitignore                   # Regles Git ignore
+# Option 2: Script Python direct
+python -c "import pandas as pd; print('Environnement prêt!')"
 ```
 
-## Composants de l'Analyse
-
-### 1. Evaluation de la Qualite des Donnees
-- Analyse des valeurs manquantes (4,1% manquantes dans les scores de satisfaction)
-- Detection des doublons (0 doublons trouves)
-- Validation des types de donnees et verification des plages
-- Detection des valeurs aberrantes utilisant la methode IQR
-- Score global de qualite des donnees : **99,92%**
-
-### 2. Visualisations Exploratoires
-- Analyse de distribution pour les variables numeriques
-- Analyse des variables categoriques
-- Matrice de correlation et cartes de chaleur
-- Visualisations de segmentation des clients
-- Analyse des tendances temporelles
-
-### 3. Intelligence Commerciale
-- Identification des clients a haute valeur (top 10%)
-- Recommandations d'optimisation des revenus
-- Insights sur la strategie d'abonnement
-- Opportunites d'expansion geographique
-- Ameliorations de l'experience client
-
-## Recommandations Strategiques
-
-### Optimisation des Revenus
-1. Se concentrer sur les abonnes **Enterprise** et les utilisateurs **mobiles**
-2. Implementer des programmes VIP pour les 100 meilleurs clients
-3. Cibler les clients avec le plus fort potentiel de depenses
-
-### Strategie d'Abonnement
-1. Promouvoir l'abonnement **Enterprise** (depenses moyennes les plus elevees)
-2. Creer des incitations a la mise a niveau pour les clients Basic ??? Premium
-3. Developper des fonctionnalites Enterprise basees sur les besoins des clients a haute valeur
-
-### Expansion Geographique
-1. Etendre les efforts marketing a **Lausanne** (depenses moyennes les plus elevees)
-2. Repliquer les strategies reussies des villes les plus performantes
-3. Considerer des partenariats locaux dans les marches a haute valeur
-
-### Experience Client
-1. Adresser le taux de rebond eleve (4,8% des clients)
-2. Ameliorer la duree de session pour un meilleur engagement
-3. Implementer des enquetes de satisfaction pour les clients notes ???4
-
-## Metriques de Succes
-
-Suivre ces indicateurs de performance cles :
-- **Valeur Vie Client (CLV)**
-- **Revenus Recurrents Mensuels (MRR)**
-- **Cout d'Acquisition Client (CAC)**
-- **Taux de Desabonnement par segment**
-- **Score Net Promoter (NPS)**
-- **Revenus Moyens par Utilisateur (ARPU)**
-
-## Contribution
-
-1. Fork le repository
-2. Creer une branche de fonctionnalite (`git checkout -b feature/fonctionnalite-incroyable`)
-3. Commiter vos changements (`git commit -m 'Ajouter une fonctionnalite incroyable'`)
-4. Pousser vers la branche (`git push origin feature/fonctionnalite-incroyable`)
-5. Ouvrir une Pull Request
-
-## Licence
-
-Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de details.
-
-## Contact
-
-Pour des questions ou suggestions, veuillez ouvrir une issue ou contacter les mainteneurs du projet.
+### Structure du Projet
+```
+Analyse-des-Comportements-Clients/
+├── 📊 01_data_exploration.ipynb          # Notebook principal d'analyse
+├── 📄 Presentation_Academique_*.pdf       # Rapport académique complet
+├── 🌐 index.html                         # Dashboard web interactif
+├── 📋 requirements.txt                   # Dépendances Python
+├── 📈 *.png                              # Graphiques générés
+├── 📊 resume_analyse_clients.csv         # Résumé des métriques
+├── 🐍 save_plots.py                     # Script de génération des graphiques
+├── 📖 README.md                          # Documentation du projet
+└── 🔧 create_academic_presentation.py   # Générateur de rapport PDF
+```
 
 ---
 
-**Note** : Cette analyse utilise des donnees synthetiques a des fins de demonstration. Dans un scenario reel, remplacer les fonctions de generation de donnees par des mecanismes de chargement de donnees clients reelles.
+## 📈 Résultats et Métriques
+
+### Métriques de Performance Business
+| Métrique | Valeur | Impact Business |
+|----------|--------|-----------------|
+| **CLV Moyen** | 336 CHF | Opportunité d'optimisation |
+| **Taux de Churn** | 68.7% | ⚠️ Action immédiate requise |
+| **Satisfaction** | 5.3/10 | Amélioration nécessaire |
+| **Durée de Vie** | 92 jours | Potentiel de rétention |
+| **Taux de Rebond** | 24.6% | Performance acceptable |
+
+### Analyse Géographique
+| Ville | Dépenses Moyennes | Clients | Potentiel |
+|-------|-------------------|---------|-----------|
+| **Lausanne** | 348.10 CHF | 180 | 🟢 Excellent |
+| **Geneva** | 341.56 CHF | 153 | 🟢 Bon |
+| **Zurich** | 338.17 CHF | 173 | 🟡 Moyen |
+| **Basel** | 322.60 CHF | 173 | 🔴 À optimiser |
+
+---
+
+## 🎯 Recommandations Stratégiques
+
+### 1. 🎯 Optimisation des Revenus
+- **Focus sur Basel** : Développer des stratégies spécifiques pour augmenter les dépenses moyennes
+- **Upselling Premium → Entreprise** : Les clients Entreprise dépensent 441 CHF vs 363 CHF pour Premium
+- **Programme VIP** : Créer des offres premium pour atteindre le segment >1000 CHF
+
+### 2. 📱 Stratégie Mobile-First
+- **Optimisation mobile** : 61.8% des clients utilisent mobile en priorité
+- **Fonctionnalités adaptées** : Développer des features spécifiques aux appareils mobiles
+- **UX mobile** : Améliorer l'expérience utilisateur sur mobile
+
+### 3. 🔄 Réduction du Churn
+- **Programme de rétention** : Le taux de churn de 68.7% nécessite une action immédiate
+- **Analyse des causes** : Identifier les raisons de départ des clients
+- **Interventions ciblées** : Mettre en place des actions préventives
+
+### 4. 📊 Amélioration de la Satisfaction
+- **Focus sur les clients insatisfaits** : 19% des clients ont une satisfaction ≤4/10
+- **Programme de feedback** : Mettre en place des enquêtes régulières
+- **Amélioration continue** : Utiliser les retours pour optimiser l'expérience
+
+---
+
+## 📚 Documentation
+
+### Rapports Disponibles
+- **[📄 Rapport Académique](Presentation_Academique_Analyse_Comportements_Clients.pdf)** - Analyse complète pour présentation professionnelle
+- **[🌐 Dashboard Web](index.html)** - Interface interactive avec graphiques dynamiques
+- **[📊 Résumé CSV](resume_analyse_clients.csv)** - Métriques clés exportées
+
+### Notebooks et Scripts
+- **[📊 Notebook Principal](01_data_exploration.ipynb)** - Analyse complète en français
+- **[🐍 Scripts Python](save_plots.py)** - Génération automatisée des graphiques
+- **[📋 Dépendances](requirements.txt)** - Liste des packages Python requis
+
+---
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! Pour contribuer au projet :
+
+1. **Fork** le repository
+2. **Créez** une branche pour votre feature (`git checkout -b feature/nouvelle-analyse`)
+3. **Commitez** vos changements (`git commit -m 'Ajout nouvelle analyse'`)
+4. **Pushez** vers la branche (`git push origin feature/nouvelle-analyse`)
+5. **Ouvrez** une Pull Request
+
+---
+
+## 📞 Contact et Support
+
+- **📧 Email** : [Votre Email]
+- **💼 LinkedIn** : [Votre Profil LinkedIn]
+- **🐙 GitHub** : [@invecta](https://github.com/invecta)
+- **📱 Twitter** : [@votre_twitter]
+
+---
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+---
+
+<div align="center">
+
+**Développé avec ❤️ pour l'analyse des comportements clients suisses**
+
+[![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue.svg)](https://python.org)
+[![Powered by Data](https://img.shields.io/badge/Powered%20by-Data-green.svg)](https://pandas.pydata.org)
+[![Built for Business](https://img.shields.io/badge/Built%20for-Business-purple.svg)](https://github.com/invecta/Analyse-des-Comportements-Clients)
+
+</div>
