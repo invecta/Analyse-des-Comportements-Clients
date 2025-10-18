@@ -20,6 +20,7 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            padding-top: 120px; /* Espace pour le header fixe */
         }
 
         .container {
@@ -34,9 +35,12 @@
             backdrop-filter: blur(10px);
             padding: 2rem 0;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
+            transform: none;
         }
 
         .header-content {
@@ -930,12 +934,8 @@
             });
         });
 
-        // Effet de parallaxe subtil sur le header
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const header = document.querySelector('.header');
-            header.style.transform = `translateY(${scrolled * 0.1}px)`;
-        });
+        // Header fixe sans mouvement
+        // L'effet de parallaxe a été supprimé pour éviter le mouvement du header
     </script>
 </body>
 </html>
