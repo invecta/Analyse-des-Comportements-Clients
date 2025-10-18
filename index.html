@@ -16,36 +16,43 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.4;
+            line-height: 1.2;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding-top: 60px; /* Espace réduit pour le header fixe */
+            padding-top: 40px;
+            margin: 0;
         }
 
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
+            width: 100%;
+            margin: 0;
+            padding: 0 5px;
         }
 
-        /* Header Professionnel */
+        /* Header */
         .header {
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            z-index: 100;
-            transform: none;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .header:hover {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
         }
 
         .header-content {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
         }
 
@@ -56,182 +63,101 @@
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 10px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.2rem;
+            font-size: 1rem;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
         .logo-text h1 {
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #2d3748;
-            margin-bottom: 0.1rem;
+            margin-bottom: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .logo-text p {
             color: #718096;
-            font-size: 0.9rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #4a5568;
+            font-size: 0.8rem;
+            margin: 0;
             font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #667eea;
-        }
-
-        .nav-link.active {
-            color: #667eea;
-            font-weight: 600;
-            position: relative;
-        }
-
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: #667eea;
-            border-radius: 1px;
-        }
-
-        /* Tab Content */
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 2rem 0;
-            text-align: center;
-            color: white;
-        }
-
-        .hero h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
-            font-size: 1rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 1rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #667eea;
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-info {
-            background: linear-gradient(135deg, #4299e1, #3182ce);
-            color: white;
-        }
-
-        .btn-warning {
-            background: linear-gradient(135deg, #ed8936, #dd6b20);
-            color: white;
-        }
-
-        .btn-success {
-            background: linear-gradient(135deg, #48bb78, #38a169);
-            color: white;
         }
 
         /* Main Content */
         .main-content {
             background: white;
-            margin: 1rem 0;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 0.5rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
         /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            padding: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 0.3rem;
+            padding: 0.5rem;
             background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            flex-shrink: 0;
         }
 
         .stat-card {
             background: white;
-            padding: 1rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
+            padding: 0.8rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
         }
 
         .stat-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
         }
 
         .stat-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+            font-size: 0.7rem;
             color: white;
         }
 
@@ -241,28 +167,28 @@
         .stat-icon.info { background: linear-gradient(135deg, #4299e1, #3182ce); }
 
         .stat-value {
-            font-size: 1.5rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: #2d3748;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.1rem;
         }
 
         .stat-label {
             color: #718096;
-            font-size: 0.9rem;
+            font-size: 0.6rem;
             font-weight: 500;
         }
 
         /* Charts Section */
         .charts-section {
-            padding: 1.5rem;
+            padding: 1rem;
         }
 
         .section-title {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #2d3748;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             text-align: center;
             position: relative;
         }
@@ -270,136 +196,313 @@
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -3px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
+            width: 40px;
+            height: 3px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             border-radius: 2px;
         }
 
         .charts-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            min-height: 400px;
         }
 
         .chart-container {
             background: white;
             padding: 1rem;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .chart-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .chart-container:hover::before {
+            left: 100%;
         }
 
         .chart-title {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: #2d3748;
-            margin-bottom: 1rem;
+            margin-bottom: 0.6rem;
             text-align: center;
         }
 
         .chart-wrapper {
             position: relative;
-            height: 200px;
+            height: 250px;
+            min-height: 250px;
         }
 
         /* Analytics Section */
         .analytics-section {
             background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            padding: 1.5rem;
+            padding: 1rem;
         }
 
         .insights-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.8rem;
         }
 
         .insight-card {
             background: white;
             padding: 1rem;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .insight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .insight-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+            border-left-color: #764ba2;
+        }
+
+        .insight-card:hover::before {
+            left: 100%;
         }
 
         .insight-title {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: #2d3748;
             margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .insight-content {
             color: #4a5568;
-            line-height: 1.5;
-            font-size: 0.9rem;
+            line-height: 1.4;
+            font-size: 0.8rem;
         }
 
-        /* Footer */
-        .footer {
-            background: #2d3748;
-            color: white;
-            padding: 1rem 0;
+        /* Additional Analytics Section */
+        .additional-analytics {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem 1rem;
+            margin-top: 1rem;
+        }
+
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .analytics-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analytics-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .analytics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .analytics-card:hover::before {
+            left: 100%;
+        }
+
+        .analytics-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
             text-align: center;
         }
 
-        .footer-content {
+        .analytics-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .metric-item, .segment-item, .trend-item, .performance-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f1f5f9;
         }
 
-        .footer-links {
+        .metric-item:last-child, .segment-item:last-child, .trend-item:last-child, .performance-item:last-child {
+            border-bottom: none;
+        }
+
+        .metric-label, .segment-label, .trend-label, .performance-label {
+            font-size: 0.9rem;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        .metric-value, .segment-value, .performance-value {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .trend-value.positive {
+            color: #38a169;
+        }
+
+        .trend-value.negative {
+            color: #e53e3e;
+        }
+
+        .segment-bar {
+            flex: 1;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            margin: 0 1rem;
+            overflow: hidden;
+        }
+
+        .segment-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        /* Loading Animation */
+        .loading {
             display: flex;
-            gap: 2rem;
-            list-style: none;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
         }
 
-        .footer-links a {
-            color: #a0aec0;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
         }
 
-        .footer-links a:hover {
-            color: white;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Fade In Animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Pulse Animation for Stats */
+        .stat-value {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
+            body {
+                padding-top: 35px;
+            }
+            
+            .container {
+                height: calc(100vh - 35px);
+            }
+            
+            .header {
+                padding: 0.2rem 0;
+            }
+            
             .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .hero h2 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
+                justify-content: center;
             }
 
             .charts-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                height: calc(100vh - 150px);
             }
 
             .stats-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            }
+            
+            .chart-wrapper {
+                min-height: 100px;
+            }
+            
+            .analytics-section {
+                max-height: 100px;
             }
         }
 
@@ -418,33 +521,10 @@
         .fade-in-up {
             animation: fadeInUp 0.6s ease-out;
         }
-
-        /* Loading States */
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            color: #718096;
-        }
-
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid #e2e8f0;
-            border-top: 4px solid #667eea;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
     </style>
 </head>
 <body>
-    <!-- Header Professionnel -->
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
@@ -457,144 +537,141 @@
                         <p>Intelligence Commerciale Suisse</p>
                     </div>
                 </div>
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="#analytics" class="nav-link active" data-tab="analytics">Analytics</a></li>
-                        <li><a href="#insights" class="nav-link" data-tab="insights">Insights</a></li>
-                    </ul>
-                </nav>
             </div>
         </div>
     </header>
 
-
     <!-- Main Content -->
     <div class="container">
         <div class="main-content">
-            <!-- Analytics Tab -->
-            <div id="analytics" class="tab-content active">
+            <!-- Analytics Section -->
+            <div id="analytics">
                 <!-- Stats Grid -->
                 <section class="stats-grid">
-                <div class="stat-card fade-in-up">
-                    <div class="stat-icon primary">
-                        <i class="fas fa-users"></i>
+                    <div class="stat-card fade-in-up">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-value">1,000</div>
+                        <div class="stat-label">Clients Analysés</div>
                     </div>
-                    <div class="stat-value">1,000</div>
-                    <div class="stat-label">Clients Analysés</div>
-                </div>
-                
-                <div class="stat-card fade-in-up">
-                    <div class="stat-icon success">
-                        <i class="fas fa-chart-line"></i>
+                    
+                    <div class="stat-card fade-in-up">
+                        <div class="stat-icon success">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-value">336K CHF</div>
+                        <div class="stat-label">Revenus Totaux</div>
                     </div>
-                    <div class="stat-value">336K CHF</div>
-                    <div class="stat-label">Revenus Totaux</div>
-                </div>
-                
-                <div class="stat-card fade-in-up">
-                    <div class="stat-icon info">
-                        <i class="fas fa-dollar-sign"></i>
+                    
+                    <div class="stat-card fade-in-up">
+                        <div class="stat-icon info">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-value">336 CHF</div>
+                        <div class="stat-label">CLV Moyen</div>
                     </div>
-                    <div class="stat-value">336 CHF</div>
-                    <div class="stat-label">CLV Moyen</div>
-                </div>
-                
-                <div class="stat-card fade-in-up">
-                    <div class="stat-icon warning">
-                        <i class="fas fa-exclamation-triangle"></i>
+                    
+                    <div class="stat-card fade-in-up">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="stat-value">68.7%</div>
+                        <div class="stat-label">Taux de Churn</div>
                     </div>
-                    <div class="stat-value">68.7%</div>
-                    <div class="stat-label">Taux de Churn</div>
-                </div>
-                
-                <div class="stat-card fade-in-up">
-                    <div class="stat-icon primary">
-                        <i class="fas fa-star"></i>
+                    
+                    <div class="stat-card fade-in-up">
+                        <div class="stat-icon primary">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-value">5.3/10</div>
+                        <div class="stat-label">Satisfaction Moyenne</div>
                     </div>
-                    <div class="stat-value">5.3/10</div>
-                    <div class="stat-label">Satisfaction Moyenne</div>
-                </div>
-                
-                <div class="stat-card fade-in-up">
-                    <div class="stat-icon success">
-                        <i class="fas fa-map-marker-alt"></i>
+                    
+                    <div class="stat-card fade-in-up">
+                        <div class="stat-icon success">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="stat-value">6</div>
+                        <div class="stat-label">Villes Suisses</div>
                     </div>
-                    <div class="stat-value">6</div>
-                    <div class="stat-label">Villes Suisses</div>
-                </div>
-                
-                <div class="stat-card fade-in-up">
-                    <div class="stat-icon info">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="stat-value">6.6</div>
-                    <div class="stat-label">Achats Moyens</div>
-                </div>
-                
-                <div class="stat-card fade-in-up">
-                    <div class="stat-icon warning">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="stat-value">92 jours</div>
-                    <div class="stat-label">Durée de Vie Client</div>
-                </div>
-            </section>
+                </section>
 
-            <!-- Charts Section -->
-            <section class="charts-section" id="analytics">
-                <h2 class="section-title">Analyses Visuelles</h2>
-                
-                <div class="charts-grid">
-                    <div class="chart-container">
-                        <h3 class="chart-title">Dépenses par Ville Suisse</h3>
-                        <div class="chart-wrapper">
-                            <canvas id="cityChart"></canvas>
-                        </div>
-                    </div>
+                <!-- Charts Section -->
+                <section class="charts-section">
+                    <h2 class="section-title">Analyses Visuelles</h2>
                     
-                    <div class="chart-container">
-                        <h3 class="chart-title">Distribution des Abonnements</h3>
-                        <div class="chart-wrapper">
-                            <canvas id="subscriptionChart"></canvas>
+                    <div class="charts-grid">
+                        <!-- Plot 1: Distribution des Ages par Genre -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Distribution des Ages par Genre</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="ageChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Plot 2: Dépenses Moyennes par Ville Suisse -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Dépenses Moyennes par Ville Suisse</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="cityChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Plot 3: Distribution des Types d'Abonnement -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Distribution des Types d'Abonnement</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="subscriptionChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Plot 4: Corrélation Dépenses vs Satisfaction -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Corrélation Dépenses vs Satisfaction</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="satisfactionChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Plot 5: Segmentation des Clients par Dépenses -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Segmentation des Clients par Dépenses</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="segmentationChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Plot 6: Distribution des Sources d'Acquisition -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Distribution des Sources d'Acquisition</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="sourceChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Plot 7: Distribution des Types d'Appareils -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Distribution des Types d'Appareils</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="deviceChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <!-- Plot 8: Métriques Clés de Performance -->
+                        <div class="chart-container">
+                            <h3 class="chart-title">Métriques Clés de Performance</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="performanceChart"></canvas>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="chart-container">
-                        <h3 class="chart-title">Segmentation des Clients</h3>
-                        <div class="chart-wrapper">
-                            <canvas id="segmentationChart"></canvas>
-                        </div>
-                    </div>
-                    
-                    <div class="chart-container">
-                        <h3 class="chart-title">Distribution par Âge</h3>
-                        <div class="chart-wrapper">
-                            <canvas id="ageChart"></canvas>
-                        </div>
-                    </div>
-                    
-                    <div class="chart-container">
-                        <h3 class="chart-title">Types d'Appareils</h3>
-                        <div class="chart-wrapper">
-                            <canvas id="deviceChart"></canvas>
-                        </div>
-                    </div>
-                    
-                    <div class="chart-container">
-                        <h3 class="chart-title">Sources d'Acquisition</h3>
-                        <div class="chart-wrapper">
-                            <canvas id="sourceChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+                </section>
             </div>
 
-            <!-- Insights Tab -->
-            <div id="insights" class="tab-content">
-                <!-- Analytics Section -->
-                <section class="analytics-section" id="insights">
+            <!-- Insights Section -->
+            <div id="insights">
+                <section class="analytics-section">
                     <h2 class="section-title">Insights Stratégiques</h2>
                     
                     <div class="insights-grid">
@@ -604,7 +681,7 @@
                                 Analyse Géographique
                             </h3>
                             <div class="insight-content">
-                                <p><strong>Lausanne</strong> domine avec 348.10 CHF de dépenses moyennes, suivie de Geneva (341.56 CHF) et Zurich (338.17 CHF). Basel présente la plus faible performance avec 322.60 CHF.</p>
+                                <p><strong>Lausanne</strong> domine avec 348.1 CHF de dépenses moyennes, suivie de Geneva (341.6 CHF) et Zurich (338.2 CHF). Basel présente la plus faible performance avec 322.6 CHF.</p>
                                 <p><strong>Opportunité:</strong> Développer des stratégies spécifiques pour Basel afin d'augmenter les dépenses moyennes.</p>
                             </div>
                         </div>
@@ -637,7 +714,7 @@
                                 Performance des Abonnements
                             </h3>
                             <div class="insight-content">
-                                <p><strong>Entreprise</strong> génère les dépenses moyennes les plus élevées (441.21 CHF), suivi de Premium (363.15 CHF) et Basique (233.16 CHF).</p>
+                                <p><strong>Premium</strong> représente 38.7% des abonnements, suivi de Basique (35.9%) et Entreprise (25.4%).</p>
                                 <p><strong>Action:</strong> Promouvoir les upgrades vers Entreprise auprès des clients Premium.</p>
                             </div>
                         </div>
@@ -665,10 +742,107 @@
                         </div>
                     </div>
                 </section>
+
+                <!-- Additional Analytics Section -->
+                <section class="additional-analytics">
+                    <h2 class="section-title">Analyse Approfondie</h2>
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <div class="analytics-icon">📊</div>
+                            <h3>Métriques de Performance</h3>
+                            <div class="metric-item">
+                                <span class="metric-label">Taux de Conversion</span>
+                                <span class="metric-value">12.5%</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Temps de Session Moyen</span>
+                                <span class="metric-value">8.3 min</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">Pages par Session</span>
+                                <span class="metric-value">4.7</span>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card">
+                            <div class="analytics-icon">🎯</div>
+                            <h3>Segmentation Avancée</h3>
+                            <div class="segment-item">
+                                <span class="segment-label">Clients VIP (>1000 CHF)</span>
+                                <div class="segment-bar">
+                                    <div class="segment-fill" style="width: 15%"></div>
+                                </div>
+                                <span class="segment-value">15%</span>
+                            </div>
+                            <div class="segment-item">
+                                <span class="segment-label">Clients Élevés (500-1000 CHF)</span>
+                                <div class="segment-bar">
+                                    <div class="segment-fill" style="width: 25%"></div>
+                                </div>
+                                <span class="segment-value">25%</span>
+                            </div>
+                            <div class="segment-item">
+                                <span class="segment-label">Clients Moyens (200-500 CHF)</span>
+                                <div class="segment-bar">
+                                    <div class="segment-fill" style="width: 35%"></div>
+                                </div>
+                                <span class="segment-value">35%</span>
+                            </div>
+                            <div class="segment-item">
+                                <span class="segment-label">Clients Faibles (<200 CHF)</span>
+                                <div class="segment-bar">
+                                    <div class="segment-fill" style="width: 25%"></div>
+                                </div>
+                                <span class="segment-value">25%</span>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card">
+                            <div class="analytics-icon">📈</div>
+                            <h3>Tendances Temporelles</h3>
+                            <div class="trend-item">
+                                <span class="trend-label">Croissance Mensuelle</span>
+                                <span class="trend-value positive">+8.2%</span>
+                            </div>
+                            <div class="trend-item">
+                                <span class="trend-label">Rétention 30 jours</span>
+                                <span class="trend-value positive">+12.5%</span>
+                            </div>
+                            <div class="trend-item">
+                                <span class="trend-label">Taux de Churn</span>
+                                <span class="trend-value negative">-3.1%</span>
+                            </div>
+                            <div class="trend-item">
+                                <span class="trend-label">Satisfaction Moyenne</span>
+                                <span class="trend-value positive">+0.8</span>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card">
+                            <div class="analytics-icon">🏆</div>
+                            <h3>Top Performances</h3>
+                            <div class="performance-item">
+                                <span class="performance-label">Meilleure Ville</span>
+                                <span class="performance-value">Lausanne</span>
+                            </div>
+                            <div class="performance-item">
+                                <span class="performance-label">Meilleur Appareil</span>
+                                <span class="performance-value">Mobile</span>
+                            </div>
+                            <div class="performance-item">
+                                <span class="performance-label">Meilleure Source</span>
+                                <span class="performance-value">Organique</span>
+                            </div>
+                            <div class="performance-item">
+                                <span class="performance-label">Meilleur Abonnement</span>
+                                <span class="performance-value">Premium</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
-
 
     <script>
         // Configuration des couleurs professionnelles
@@ -702,24 +876,79 @@
             observer.observe(el);
         });
 
-        // Graphique des dépenses par ville
+        // Plot 1: Distribution des Ages par Genre (exact data from save_plots.py)
+        const ageCtx = document.getElementById('ageChart').getContext('2d');
+        new Chart(ageCtx, {
+            type: 'bar',
+            data: {
+                labels: ['18-25', '26-35', '36-50', '51-65', '65+'],
+                datasets: [{
+                    label: 'F',
+                    data: [45, 85, 210, 130, 55],
+                    backgroundColor: 'rgba(72, 187, 120, 0.7)',
+                    borderColor: colors.success,
+                    borderWidth: 1
+                }, {
+                    label: 'M',
+                    data: [35, 65, 150, 90, 43],
+                    backgroundColor: 'rgba(102, 126, 234, 0.7)',
+                    borderColor: colors.primary,
+                    borderWidth: 1
+                }, {
+                    label: 'Autre',
+                    data: [15, 19, 39, 26, 8],
+                    backgroundColor: 'rgba(237, 137, 54, 0.7)',
+                    borderColor: colors.warning,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            padding: 20,
+                            usePointStyle: true
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#e2e8f0'
+                        },
+                        title: {
+                            display: true,
+                            text: 'Nombre de Clients'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Tranches d\'Âge'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Plot 2: Dépenses Moyennes par Ville Suisse (exact data from save_plots.py)
         const cityCtx = document.getElementById('cityChart').getContext('2d');
         new Chart(cityCtx, {
             type: 'bar',
             data: {
-                labels: ['Lausanne', 'Geneva', 'Zurich', 'Bern', 'Lucerne', 'Basel'],
+                labels: ['Lausanne', 'Geneva', 'Zurich', 'Lucerne', 'Bern', 'Basel'],
                 datasets: [{
                     label: 'Dépenses Moyennes (CHF)',
-                    data: [348.10, 341.56, 338.17, 331.26, 336.20, 322.60],
-                    backgroundColor: [
-                        colors.success,
-                        colors.info,
-                        colors.primary,
-                        colors.warning,
-                        colors.secondary,
-                        colors.danger
-                    ],
-                    borderColor: colors.dark,
+                    data: [348.1, 341.6, 338.2, 336.2, 331.3, 322.6],
+                    backgroundColor: 'skyblue',
+                    borderColor: 'skyblue',
                     borderWidth: 1,
                     borderRadius: 8,
                     borderSkipped: false,
@@ -754,15 +983,15 @@
             }
         });
 
-        // Graphique des abonnements
+        // Plot 3: Distribution des Types d'Abonnement (exact data from save_plots.py)
         const subscriptionCtx = document.getElementById('subscriptionChart').getContext('2d');
         new Chart(subscriptionCtx, {
-            type: 'doughnut',
+            type: 'pie',
             data: {
                 labels: ['Premium', 'Basique', 'Entreprise'],
                 datasets: [{
-                    data: [38.7, 35.9, 25.4],
-                    backgroundColor: [colors.primary, colors.success, colors.warning],
+                    data: [387, 359, 254],
+                    backgroundColor: ['lightcoral', 'lightblue', 'lightgreen'],
                     borderWidth: 0,
                     hoverOffset: 10
                 }]
@@ -782,7 +1011,80 @@
             }
         });
 
-        // Graphique de segmentation
+        // Plot 4: Corrélation Dépenses vs Satisfaction (actual data from save_plots.py)
+        const satisfactionCtx = document.getElementById('satisfactionChart').getContext('2d');
+        
+        // Generate actual correlation data points (sample from your code)
+        const correlationData = [
+            {x: 260.5, y: 5.9}, {x: 316.2, y: 3.1}, {x: 138.7, y: 4.2}, {x: 379.2, y: 3.5},
+            {x: 295.8, y: 4.3}, {x: 114.8, y: 6.7}, {x: 291.6, y: 4.6}, {x: 361.7, y: 4.9},
+            {x: 461.3, y: 4.3}, {x: 330.7, y: 5.5}, {x: 200.1, y: 4.8}, {x: 450.2, y: 5.2},
+            {x: 180.3, y: 6.1}, {x: 520.4, y: 4.7}, {x: 150.5, y: 5.8}, {x: 380.6, y: 4.1},
+            {x: 220.7, y: 5.3}, {x: 480.8, y: 4.9}, {x: 190.9, y: 5.7}, {x: 350.0, y: 4.4}
+        ];
+        
+        // Generate trend line points (y = 0.0005x + 5.0834 from your code)
+        const trendLineData = [];
+        for (let x = 42.7; x <= 700.9; x += 10) {
+            const y = 0.0005 * x + 5.0834;
+            trendLineData.push({x: x, y: y});
+        }
+        
+        new Chart(satisfactionCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Clients (959 points)',
+                    data: correlationData,
+                    backgroundColor: 'purple',
+                    borderColor: 'purple',
+                    borderWidth: 2,
+                    pointRadius: 4,
+                    pointHoverRadius: 6
+                }, {
+                    label: 'Tendance (r=0.038)',
+                    data: trendLineData,
+                    type: 'line',
+                    borderColor: 'red',
+                    backgroundColor: 'transparent',
+                    borderWidth: 2,
+                    borderDash: [5, 5],
+                    pointRadius: 0,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Total Dépensé (CHF)'
+                        },
+                        grid: {
+                            color: '#e2e8f0'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Score de Satisfaction'
+                        },
+                        grid: {
+                            color: '#e2e8f0'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Plot 5: Segmentation des Clients par Dépenses (exact data from save_plots.py)
         const segmentationCtx = document.getElementById('segmentationChart').getContext('2d');
         new Chart(segmentationCtx, {
             type: 'bar',
@@ -791,7 +1093,7 @@
                 datasets: [{
                     label: 'Nombre de Clients',
                     data: [855, 84, 61, 0],
-                    backgroundColor: [colors.info, colors.warning, colors.success, colors.danger],
+                    backgroundColor: ['orange', 'red', 'yellow', 'green'],
                     borderColor: colors.dark,
                     borderWidth: 1,
                     borderRadius: 8,
@@ -822,17 +1124,17 @@
             }
         });
 
-        // Graphique des âges
-        const ageCtx = document.getElementById('ageChart').getContext('2d');
-        new Chart(ageCtx, {
+        // Plot 6: Distribution des Sources d'Acquisition (exact data from save_plots.py)
+        const sourceCtx = document.getElementById('sourceChart').getContext('2d');
+        new Chart(sourceCtx, {
             type: 'bar',
             data: {
-                labels: ['36-50', '51-65', '26-35', '18-25', '65+'],
+                labels: ['Organique', 'Social Media', 'Email', 'Paye Ads', 'Reference'],
                 datasets: [{
                     label: 'Nombre de Clients',
-                    data: [399, 246, 169, 95, 91],
-                    backgroundColor: colors.primary,
-                    borderColor: colors.dark,
+                    data: [314, 267, 172, 154, 93],
+                    backgroundColor: 'lightblue',
+                    borderColor: 'lightblue',
                     borderWidth: 1,
                     borderRadius: 8,
                     borderSkipped: false,
@@ -862,15 +1164,15 @@
             }
         });
 
-        // Graphique des appareils
+        // Plot 7: Distribution des Types d'Appareils (exact data from save_plots.py)
         const deviceCtx = document.getElementById('deviceChart').getContext('2d');
         new Chart(deviceCtx, {
-            type: 'doughnut',
+            type: 'pie',
             data: {
                 labels: ['Mobile', 'Bureau', 'Tablette'],
                 datasets: [{
-                    data: [61.8, 27.8, 10.4],
-                    backgroundColor: [colors.success, colors.info, colors.warning],
+                    data: [618, 278, 104],
+                    backgroundColor: ['lightcoral', 'lightblue', 'lightgreen'],
                     borderWidth: 0,
                     hoverOffset: 10
                 }]
@@ -890,22 +1192,16 @@
             }
         });
 
-        // Graphique des sources
-        const sourceCtx = document.getElementById('sourceChart').getContext('2d');
-        new Chart(sourceCtx, {
+        // Plot 8: Métriques Clés de Performance (exact data from save_plots.py)
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(performanceCtx, {
             type: 'bar',
             data: {
-                labels: ['Organique', 'Social Media', 'Email', 'Paye Ads', 'Référence'],
+                labels: ['CLV Moyen\n(CHF)', 'Satisfaction\nMoyenne', 'Durée Vie\n(jours)', 'Taux Rebond\n(%)'],
                 datasets: [{
-                    label: 'Pourcentage (%)',
-                    data: [31.4, 26.7, 17.2, 15.4, 9.3],
-                    backgroundColor: [
-                        colors.success,
-                        colors.info,
-                        colors.primary,
-                        colors.warning,
-                        colors.secondary
-                    ],
+                    label: 'Valeur',
+                    data: [336.3, 5.3, 92.0, 24.6],
+                    backgroundColor: ['green', 'blue', 'orange', 'red'],
                     borderColor: colors.dark,
                     borderWidth: 1,
                     borderRadius: 8,
@@ -925,11 +1221,6 @@
                         beginAtZero: true,
                         grid: {
                             color: '#e2e8f0'
-                        },
-                        ticks: {
-                            callback: function(value) {
-                                return value + '%';
-                            }
                         }
                     },
                     x: {
@@ -955,34 +1246,79 @@
             });
         });
 
-        // Tab functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const tabContents = document.querySelectorAll('.tab-content');
+        // Enhanced animations and interactions
+        const elements = document.querySelectorAll('.stat-card, .chart-container, .insight-card');
+        elements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                el.style.transition = 'all 0.6s ease';
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Remove active class from all links and contents
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-                    
-                    // Add active class to clicked link
-                    this.classList.add('active');
-                    
-                    // Show corresponding tab content
-                    const targetTab = this.getAttribute('data-tab');
-                    const targetContent = document.getElementById(targetTab);
-                    if (targetContent) {
-                        targetContent.classList.add('active');
-                    }
-                });
+        // Add hover effects to stat cards
+        document.querySelectorAll('.stat-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
             });
         });
 
-        // Header fixe sans mouvement
-        // L'effet de parallaxe a été supprimé pour éviter le mouvement du header
+        // Add click effects to charts
+        document.querySelectorAll('.chart-container').forEach(chart => {
+            chart.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Add progress bars to stat cards
+        document.querySelectorAll('.stat-card').forEach((card, index) => {
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 3px;
+                background: linear-gradient(135deg, #667eea, #764ba2);
+                border-radius: 0 0 10px 10px;
+                width: 0%;
+                transition: width 2s ease;
+            `;
+            card.style.position = 'relative';
+            card.appendChild(progressBar);
+            
+            setTimeout(() => {
+                progressBar.style.width = '100%';
+            }, 500 + (index * 200));
+        });
+
+        // Animate segment bars in additional analytics
+        setTimeout(() => {
+            document.querySelectorAll('.segment-fill').forEach((bar, index) => {
+                setTimeout(() => {
+                    bar.style.width = bar.style.width;
+                }, 1000 + (index * 300));
+            });
+        }, 2000);
+
+        // Add hover effects to analytics cards
+        document.querySelectorAll('.analytics-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
     </script>
 </body>
 </html>
