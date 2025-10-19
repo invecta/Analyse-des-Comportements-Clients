@@ -11,7 +11,7 @@
 **Intelligence Commerciale pour le Marché Suisse**
 
 [![Demo](https://img.shields.io/badge/Demo-Live%20Analysis-brightgreen.svg)](https://github.com/invecta/Analyse-des-Comportements-Clients)
-[![Report](https://img.shields.io/badge/Report-PDF%20Download-blue.svg)](Presentation_Academique_Analyse_Comportements_Clients.pdf)
+[![Report](https://img.shields.io/badge/Report-PDF%20Download-blue.svg)](Presentation_Analyse_Comportements_Clients.pdf)
 [![Notebook](https://img.shields.io/badge/Notebook-Jupyter-orange.svg)](01_data_exploration.ipynb)
 
 </div>
@@ -116,7 +116,7 @@ python -c "import pandas as pd; print('Environnement prêt!')"
 ```
 Analyse-des-Comportements-Clients/
 ├── 📊 01_data_exploration.ipynb          # Notebook principal d'analyse
-├── 📄 Presentation_Academique_*.pdf       # Rapport académique complet
+├── 📄 Presentation_Analyse_Comportements_Clients.pdf  # Rapport académique complet
 ├── 🌐 index.html                         # Dashboard web interactif
 ├── 📋 requirements.txt                   # Dépendances Python
 ├── 📈 *.png                              # Graphiques générés
@@ -176,7 +176,7 @@ Analyse-des-Comportements-Clients/
 ## 📚 Documentation
 
 ### Rapports Disponibles
-- **[📄 Rapport Académique](Presentation_Academique_Analyse_Comportements_Clients.pdf)** - Analyse complète pour présentation professionnelle
+- **[📄 Rapport Académique](Presentation_Analyse_Comportements_Clients.pdf)** - Analyse complète pour présentation professionnelle
 - **[🌐 Dashboard Web](index.html)** - Interface interactive avec graphiques dynamiques
 - **[📊 Résumé CSV](resume_analyse_clients.csv)** - Métriques clés exportées
 
